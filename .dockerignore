@@ -1,0 +1,12 @@
+.git
+.env
+.local
+.venv
+**/.env
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+**/pytest-cache-files-*
+**/*.egg-info
+**/*.tsbuildinfo

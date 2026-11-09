@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jg-repuestos"
+version = "0.1.0"
+description = "Monolito modular de gestión comercial JG Repuestos"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.121,<1", "uvicorn[standard]>=0.34,<1",
+  "SQLAlchemy>=2.0.40,<2.1", "psycopg[binary]>=3.2,<4",
+  "pydantic>=2.11,<3", "pydantic-settings>=2.9,<3",
+  "alembic>=1.15,<2", "PyJWT>=2.10,<3", "pwdlib[argon2]>=0.2,<1",
+  "email-validator>=2.2,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "httpx>=0.28,<1", "testcontainers[postgres]>=4.10,<5", "ruff>=0.11,<1"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["postgres: requiere PostgreSQL real o Docker con Testcontainers"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
