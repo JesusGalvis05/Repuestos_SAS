@@ -1,5 +1,14 @@
 .env
 __pycache__
 .pytest_cache
-tests
+pytest-cache-files-*
+.ruff_cache
+.venv
+.git
+.local
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
 *.egg-info

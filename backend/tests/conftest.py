@@ -16,6 +16,10 @@ def postgres_url():
     url = os.environ.get("TEST_DATABASE_URL")
     if url:
         yield url
+    elif os.environ.get("RUN_DOCKER_COMMUNICATION") == "1":
+        from app.core.config import get_settings
+
+        yield get_settings().database_url
     elif os.environ.get("USE_TESTCONTAINERS") == "1":
         from testcontainers.postgres import PostgresContainer
 

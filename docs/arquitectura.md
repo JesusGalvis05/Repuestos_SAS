@@ -2,6 +2,10 @@
 
 Estado: implementación incremental; esta entrega abarca exclusivamente la Fase 1.
 
+La entrega académica Docker utiliza exactamente dos servicios de ejecución, api
+y db, en `docker-compose.yml`. El frontend permanece en su carpeta y se ejecuta
+fuera de Compose. El arranque api aplica Alembic dentro del mismo contenedor.
+
 Una aplicación FastAPI desplegable contiene módulos de negocio. PostgreSQL es la
 única base de datos operacional. React consume contratos REST bajo `/api/v1`.
 SQLAlchemy 2.0 mantiene los modelos; Pydantic v2 define contratos independientes;

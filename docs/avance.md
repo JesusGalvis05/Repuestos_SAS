@@ -19,6 +19,11 @@ La Fase 1 tiene implementación funcional y comprobaciones locales; su validaci�
 de contenedores queda pendiente. No se inicia la Fase 2 hasta cerrar ese criterio.
 Los resultados concretos de ejecución se registran en `pruebas.md`.
 
+Adaptación académica Docker: Compose de dos servicios, diagnóstico de comunicación,
+CI y documento PDF preparados. Resultado actual: 31 pruebas backend aprobadas y
+una exclusiva de Docker omitida. Sigue pendiente ejecutar contenedores y Actions;
+el detalle y la rúbrica de 150 puntos están en `entrega-1/`.
+
 ## Fases conservadas, aún pendientes
 
 | Fase | Alcance pendiente |

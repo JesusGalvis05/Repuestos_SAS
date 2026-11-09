@@ -46,3 +46,15 @@ Se corrigió la normalización de separadores de rutas en Windows. El contenedor
 
 No se ha realizado publicación pública: no hay cuenta de alojamiento conectada.
 Se propuso habilitar Railway para continuar ese despliegue.
+
+## Entrega Docker — Escenario 3
+
+La entrega académica adapta el Compose a exactamente api y db, sin publicar
+PostgreSQL al host. La configuración fue validada con Compose standalone oficial
+2.39.4, checksum contrastado y `config --quiet` con salida 0. El motor Docker no
+está instalado: imágenes, red activa, persistencia al recrear y CI remoto siguen
+pendientes de ejecución real.
+
+La suite actual obtuvo 31 pruebas backend aprobadas y una omitida exclusiva de
+Docker. Las dos pruebas frontend y la compilación aprobaron. El PDF académico de
+7 páginas y las evidencias reales, incluyendo las limitaciones, están en `entrega-1/`.

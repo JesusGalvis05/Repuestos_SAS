@@ -1,5 +1,10 @@
 # Despliegue
 
+El Compose académico vigente está en `docker-compose.yml`, con sólo api y db.
+La API se publica en 8000 y PostgreSQL no publica puertos. Las alternativas que
+siguen conservan el despliegue local previo y el contenedor único raíz; no se
+agregan al Compose de la actividad. Véase `entrega-1/demostracion.md`.
+
 ## En este equipo Windows
 
 Después de preparar el entorno y compilar el frontend:

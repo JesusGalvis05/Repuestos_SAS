@@ -1,3 +1,4 @@
+# Alternativa con frontend incluido; la entrega académica usa backend/Dockerfile.
 FROM node:24-alpine AS frontend
 WORKDIR /web
 COPY frontend/package.json frontend/package-lock.json ./
@@ -5,7 +6,7 @@ RUN npm ci
 COPY frontend/ ./
 RUN npm run build
 
-FROM python:3.12-slim
+FROM python:3.12.16-slim-bookworm
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 FRONTEND_DIST=/app/web PORT=8000
 WORKDIR /app
 COPY backend/requirements.lock ./

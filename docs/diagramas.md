@@ -24,7 +24,9 @@ flowchart TB
 ```
 
 La CLI reutiliza servicios del monolito, no es otra aplicación backend desplegable.
-En Compose nginx sirve la SPA y dirige `/api` a FastAPI. En desarrollo lo hace Vite.
+En el Compose académico sólo existen api y db; React se ejecuta con Vite en el
+host y dirige `/api` a FastAPI. El despliegue local alternativo sirve el build
+React desde el mismo proceso FastAPI. No se incluye nginx como tercer servicio.
 
 ## Componentes implementados
 

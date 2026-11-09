@@ -1,0 +1,7 @@
+# Herramientas opcionales de documentación; no pertenecen a la imagen API.
+reportlab==4.4.10
+pillow==13.0.0
+charset-normalizer==3.5.2
+PyYAML==6.0.3
+pypdf==6.6.0
+tzdata==2026.6

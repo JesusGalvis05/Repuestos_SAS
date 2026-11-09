@@ -1,0 +1,3 @@
+Fecha: 2026-11-08T21:50:40.173627-05:00
+Búsqueda real de docker en PATH: no encontrado.
+No se ejecutaron ni simularon comandos Docker.

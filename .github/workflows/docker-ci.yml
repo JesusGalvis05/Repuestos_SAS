@@ -1,0 +1,60 @@
+name: Docker - Entrega 1
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v4
+      - name: Preparar Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Preparar Python para los scripts
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generar configuración efímera y enmascarar secretos
+        run: |
+          python scripts/configure.py
+          python - <<'PY'
+          from pathlib import Path
+          for line in Path('.env').read_text().splitlines():
+              key, _, value = line.partition('=')
+              if key in {'POSTGRES_PASSWORD', 'JWT_SECRET'}:
+                  print(f'::add-mask::{value}')
+          PY
+      - name: Construir, levantar, comprobar comunicación y persistencia
+        run: python scripts/docker_evidence.py --output docs/entrega-1/evidencias/ci
+      - name: Ejecutar Pytest en api con PostgreSQL db y los mismos dos servicios
+        run: |
+          docker build --target test --tag jg-repuestos-api:academic backend
+          docker compose up -d --no-build --force-recreate --wait --wait-timeout 180 api
+          python scripts/run_container_tests.py
+      - name: Conservar evidencias reales y saneadas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-docker-${{ github.run_number }}
+          path: docs/entrega-1/evidencias/ci/
+          if-no-files-found: warn
+      - name: Apagar los dos contenedores
+        if: always()
+        run: docker compose down --remove-orphans
+  frontend:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci && npm test && npm run build
+        working-directory: frontend

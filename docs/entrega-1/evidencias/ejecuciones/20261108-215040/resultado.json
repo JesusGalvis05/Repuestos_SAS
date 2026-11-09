@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-08T21:50:40.173627-05:00",
+  "status": "blocked",
+  "commands": [],
+  "communication": "pending",
+  "persistence": "pending",
+  "reason": "Docker CLI/motor no disponibles en este equipo",
+  "finished_at": "2026-11-08T21:50:40.179629-05:00"
+}

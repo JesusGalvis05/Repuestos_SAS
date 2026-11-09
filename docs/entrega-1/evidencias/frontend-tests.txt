@@ -1,0 +1,16 @@
+$ npm test
+
+> jg-repuestos-web@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Jesus/estudio/repuestos_SAS/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  21:57:29
+   Duration  2.00s (environment 33%, tests 30%, import 23%, setup 12%, transform 2%)
+
+
+Exit code: 0

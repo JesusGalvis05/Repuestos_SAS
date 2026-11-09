@@ -10,3 +10,9 @@
 **/pytest-cache-files-*
 **/*.egg-info
 **/*.tsbuildinfo
+**/.ruff_cache
+**/*.log
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx

@@ -16,8 +16,12 @@ from app.modules.identity.schemas import UserCreate
 
 
 def settings(**kwargs):
+    kwargs.setdefault("docker_runtime", False)
     return Settings(
-        _env_file=None, jwt_secret="unit-test-secret-with-more-than-32-characters", **kwargs
+        _env_file=None,
+        database_url="postgresql+psycopg://unit@localhost:5432/unit",
+        jwt_secret="unit-test-secret-with-more-than-32-characters",
+        **kwargs,
     )
 
 
@@ -38,14 +42,24 @@ def test_access_contract_and_wrong_key():
     with pytest.raises(jwt.InvalidTokenError):
         decode_access(
             token,
-            Settings(_env_file=None, jwt_secret="a different secret that is sufficiently long"),
+            Settings(
+                _env_file=None,
+                database_url="postgresql+psycopg://unit@localhost:5432/unit",
+                docker_runtime=False,
+                jwt_secret="a different secret that is sufficiently long",
+            ),
         )
 
 
 @pytest.mark.parametrize("secret", ["short", "REPLACE_WITH_RANDOM_SECRET_AT_LEAST_32_CHARACTERS"])
 def test_insecure_secret_rejected(secret):
     with pytest.raises(ValidationError):
-        Settings(_env_file=None, jwt_secret=secret)
+        Settings(
+            _env_file=None,
+            database_url="postgresql+psycopg://unit@localhost:5432/unit",
+            docker_runtime=False,
+            jwt_secret=secret,
+        )
 
 
 def test_production_requires_https_and_secure_cookies():

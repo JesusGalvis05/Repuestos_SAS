@@ -1,5 +1,13 @@
 # JG Repuestos
 
+**Entrega proyecto 1 · Escenario 3 · Docker (150 puntos).**
+Fecha límite: **martes 10 de noviembre de 2026, 23:55, America/Bogota**.
+Esta entrega no desarrolla funcionalidades de Fase 2.
+
+[Informe académico PDF](docs/entrega-1/JG_Repuestos_Entrega_1_Escenario_3.pdf) ·
+[Matriz de los ocho criterios](docs/entrega-1/rubrica.md) ·
+[Guion de demostración y evidencias](docs/entrega-1/demostracion.md)
+
 Sistema comercial e inventario para JG Repuestos, Colombia. Monolito modular con
 **Python, FastAPI, SQLAlchemy 2.0, Pydantic v2, Alembic y PostgreSQL**. Frontend
 React, TypeScript, Vite y Tailwind CSS. API versionada: `/api/v1`.
@@ -28,14 +36,64 @@ docker compose exec api python -m app.cli create-admin
 El último comando solicita nombre, correo y contraseña de forma interactiva;
 no hay usuarios ni contraseñas predeterminadas. El alta inicial se bloquea
 atómicamente cuando existe un administrador activo. Las migraciones se ejecutan
-en el servicio `migrate` antes del inicio de la API.
+al arrancar `api`, dentro del mismo contenedor y antes de Uvicorn. Si Alembic
+falla, el servidor no se inicia. No hay tercer servicio de migraciones.
 
-- Aplicación: http://localhost:8080
+- API: http://localhost:8000/api/v1/health
 - OpenAPI/Swagger: http://localhost:8000/api/v1/docs
 - Disponibilidad API/BD: http://localhost:8000/api/v1/ready
 
 `docker compose down` detiene servicios y conserva la base. El volumen contiene
 datos persistentes. No borre el volumen para actualizar la aplicación.
+
+`docker-compose.yml` contiene **exactamente dos servicios**, `api` y `db`,
+unidos a la red bridge `jg-network`. Sólo la API publica `127.0.0.1:8000`.
+PostgreSQL usa `db:5432`, sin puerto publicado al host, y el volumen
+`postgres_data`. El backend arma su URL con `SQLAlchemy.URL.create` a partir de
+`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_HOST=db` y
+`POSTGRES_PORT=5432`, por lo que admite caracteres especiales sin concatenarlos.
+Con `DOCKER_RUNTIME=true` se rechaza cualquier otro host o puerto de PostgreSQL.
+
+La imagen usa Python `3.12.16-slim-bookworm`, dependencias fijadas y UID/GID 10001.
+PostgreSQL usa `17.11-bookworm`. Son versiones de imágenes oficiales verificadas
+en los catálogos de [Python](https://github.com/docker-library/official-images/blob/master/library/python)
+y [PostgreSQL](https://github.com/docker-library/official-images/blob/master/library/postgres).
+La espera por salud sigue la [documentación oficial de Compose](https://docs.docker.com/compose/how-tos/startup-order/).
+
+El frontend permanece separado y se ejecuta con Vite en el host; no se agrega
+un tercer contenedor. `frontend/Dockerfile` y el Dockerfile raíz son alternativas
+de despliegue anteriores, no forman parte del Compose académico.
+
+## Demostrar comunicación real y persistencia
+
+```powershell
+docker compose config --quiet
+docker compose build
+docker compose up -d --wait --wait-timeout 180
+docker compose ps
+docker ps
+docker network inspect jg-network
+docker compose exec -T api python -m app.diagnostics roundtrip
+docker compose logs api
+docker compose logs db
+```
+
+El diagnóstico inserta un usuario temporal **inactivo y sin roles**, confirma la
+transacción, lo lee en una sesión nueva y elimina exclusivamente ese UUID y sus
+marcas de demostración. No crea endpoints de escritura ni muestra contraseñas.
+El JSON resultante identifica host, puerto real del servidor y limpieza.
+
+Para ejecutar todos los comandos, recrear ambos contenedores conservando el
+volumen y comprobar que el registro sigue existiendo:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/docker_evidence.py
+```
+
+El recolector deja salidas reales saneadas en `docs/entrega-1/evidencias/ejecuciones/`.
+Devuelve error y registra el bloqueo cuando Docker no existe. No inventa resultados.
+`docker compose config` imprime secretos interpolados: para capturas use la salida
+saneada del recolector; para validar sin imprimirlos use `config --quiet`.
 
 ## Ejecutar desde Visual Studio Code en Windows
 
@@ -44,15 +102,15 @@ Python 3.12+, Node 24 y PostgreSQL 17+ (local o con Docker).
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1
-docker compose up db -d
 cd backend
 ..\.venv\Scripts\python.exe -m alembic upgrade head
 ..\.venv\Scripts\python.exe -m app.cli create-admin
 cd ..
 ```
 
-Si utiliza PostgreSQL local, configure una base y usuario dedicados y ajuste
-`DATABASE_URL` en `backend/.env` antes de migrar; omita `docker compose up db`.
+Para depurar el backend en el host, configure PostgreSQL local y ajuste
+`DATABASE_URL` en `backend/.env` antes de migrar. El PostgreSQL del Compose no
+publica 5432 y no es accesible desde un backend ejecutado en el host.
 No copie contraseñas de bases reales al repositorio.
 
 En una terminal ejecute:
@@ -93,8 +151,54 @@ PostgreSQL se omiten explícitamente. Use una base exclusiva de pruebas y un
 usuario con permiso para crear esquemas. Las pruebas usan Alembic, no
 `metadata.create_all()`.
 
-La integración continua verifica backend, frontend y el arranque completo con
-Docker Compose. [Matriz de pruebas](docs/pruebas.md).
+El workflow `.github/workflows/docker-ci.yml` está configurado para comprobar
+build, salud, migraciones, comunicación real, persistencia, Pytest y frontend.
+Utiliza Buildx y apaga los dos servicios mediante `if: always()`. No publica imágenes.
+Su ejecución en GitHub permanece pendiente hasta publicar el repositorio y
+obtener una ejecución aprobada. [Matriz de pruebas](docs/pruebas.md).
+
+También puede ejecutar Pytest dentro de `api`, manteniendo los mismos dos servicios:
+
+```powershell
+docker build --target test -t jg-repuestos-api:academic backend
+docker compose up -d --no-build --force-recreate --wait api
+docker compose exec -T -e RUN_DOCKER_COMMUNICATION=1 api python -m pytest -q -p no:cacheprovider
+```
+
+Las pruebas crean esquemas aislados y la demostración se limpia por UUID. Al
+terminar, `docker compose build` y `docker compose up -d --wait` recuperan la
+imagen de ejecución sin herramientas de pruebas.
+
+## Estado de validación y GitHub
+
+En este equipo Docker y WSL no están instalados. La revisión estática no equivale
+a construir ni ejecutar contenedores. Las evidencias distinguen pruebas locales
+con PostgreSQL nativo de pruebas Docker aún pendientes. No hay remoto GitHub
+configurado ni pipeline aprobado confirmado.
+
+Se validó además el archivo con Compose oficial portátil 2.39.4, sin instalar un
+motor: SHA-256 comprobado y `config --quiet` con salida 0. La configuración
+normalizada saneada y el resultado están en `docs/entrega-1/evidencias/`.
+Para repetir con un Compose standalone ya descargado:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/validate_compose.py --binary .local/tools/docker-compose.exe
+```
+
+Los commits locales conservan el historial. Para publicar, cree/conecte un
+repositorio GitHub vacío, añada su URL como `origin` y haga push de la rama actual.
+Use autenticación del gestor de credenciales; nunca introduzca un token en la URL.
+Anote la URL real en `docs/entrega-1/informe.md` y adjunte la ejecución de Actions.
+
+## Generar el PDF académico
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r scripts/requirements-evidence.lock
+.\.venv\Scripts\python.exe scripts/build_evidence_pdf.py
+```
+
+El PDF incluye las limitaciones pendientes; sólo incorpore capturas obtenidas de
+ejecuciones reales. La lista exacta está en `docs/entrega-1/capturas/README.md`.
 
 ## Seguridad y operación
 

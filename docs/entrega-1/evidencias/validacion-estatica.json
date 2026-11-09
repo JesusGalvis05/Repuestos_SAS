@@ -1,0 +1,78 @@
+{
+  "scope": "static-only",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "exactamente api y db",
+      "status": "passed"
+    },
+    {
+      "check": "sin Compose alternativo ambiguo",
+      "status": "passed"
+    },
+    {
+      "check": "DNS Docker y puerto interno",
+      "status": "passed"
+    },
+    {
+      "check": "sin URL con credenciales en Compose",
+      "status": "passed"
+    },
+    {
+      "check": "PostgreSQL sin puertos publicados",
+      "status": "passed"
+    },
+    {
+      "check": "red propia",
+      "status": "passed"
+    },
+    {
+      "check": "espera healthcheck",
+      "status": "passed"
+    },
+    {
+      "check": "volumen persistente",
+      "status": "passed"
+    },
+    {
+      "check": "PostgreSQL versión específica",
+      "status": "passed"
+    },
+    {
+      "check": "Python oficial versión específica",
+      "status": "passed"
+    },
+    {
+      "check": "usuario no privilegiado",
+      "status": "passed"
+    },
+    {
+      "check": "puerto y migraciones",
+      "status": "passed"
+    },
+    {
+      "check": "eventos CI",
+      "status": "passed"
+    },
+    {
+      "check": "Buildx y cierre garantizado",
+      "status": "passed"
+    },
+    {
+      "check": "prueba real integrada",
+      "status": "passed"
+    },
+    {
+      "check": "sin secretos versionados",
+      "status": "passed"
+    },
+    {
+      "check": "ignore de secretos efectivo",
+      "status": "passed"
+    },
+    {
+      "check": "ejemplo sin secretos",
+      "status": "passed"
+    }
+  ]
+}

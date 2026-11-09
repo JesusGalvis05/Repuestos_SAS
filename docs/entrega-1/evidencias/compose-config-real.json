@@ -1,0 +1,109 @@
+{
+  "name": "jg-repuestos",
+  "networks": {
+    "jg-network": {
+      "name": "jg-network",
+      "driver": "bridge",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "api": {
+      "build": {
+        "context": "C:\\Jesus\\estudio\\repuestos_SAS\\backend",
+        "dockerfile": "Dockerfile",
+        "target": "runtime"
+      },
+      "cap_drop": [
+        "ALL"
+      ],
+      "command": null,
+      "depends_on": {
+        "db": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "environment": {
+        "ALLOWED_ORIGINS": "[\"http://localhost:5173\",\"http://localhost:8000\",\"http://127.0.0.1:5173\",\"http://127.0.0.1:8000\"]",
+        "APP_ENV": "development",
+        "COOKIE_SECURE": "false",
+        "DOCKER_RUNTIME": "true",
+        "JWT_SECRET": "[REDACTADO]",
+        "POSTGRES_DB": "jg_repuestos",
+        "POSTGRES_HOST": "db",
+        "POSTGRES_PASSWORD": "[REDACTADO]",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_USER": "jg"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/ready', timeout=3)"
+        ],
+        "timeout": "5s",
+        "interval": "5s",
+        "retries": 15,
+        "start_period": "30s"
+      },
+      "image": "jg-repuestos-api:academic",
+      "networks": {
+        "jg-network": null
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8000,
+          "published": "8000",
+          "protocol": "tcp"
+        }
+      ],
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ]
+    },
+    "db": {
+      "command": null,
+      "entrypoint": null,
+      "environment": {
+        "POSTGRES_DB": "jg_repuestos",
+        "POSTGRES_PASSWORD": "[REDACTADO]",
+        "POSTGRES_USER": "jg",
+        "TZ": "UTC"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""
+        ],
+        "timeout": "5s",
+        "interval": "5s",
+        "retries": 15,
+        "start_period": "10s"
+      },
+      "image": "postgres:17.11-bookworm",
+      "networks": {
+        "jg-network": null
+      },
+      "restart": "unless-stopped",
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "postgres_data",
+          "target": "/var/lib/postgresql/data",
+          "volume": {}
+        }
+      ]
+    }
+  },
+  "volumes": {
+    "postgres_data": {
+      "name": "jg-repuestos_postgres_data"
+    }
+  }
+}

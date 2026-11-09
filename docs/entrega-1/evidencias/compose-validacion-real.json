@@ -1,0 +1,42 @@
+{
+  "scope": "compose-cli-only; sin motor ni contenedores",
+  "status": "passed",
+  "version": "Docker Compose version v2.39.4",
+  "binary_sha256": "6b3bccfabcdd172e1d9e15d011b54c9b5b13b93b1153148108f55e4349055955",
+  "checksum_file_matches": true,
+  "commands": [
+    {
+      "arguments": [
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "-f",
+        "docker-compose.yml",
+        "config",
+        "--quiet"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "-f",
+        "docker-compose.yml",
+        "config",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "services": [
+    "api",
+    "db"
+  ],
+  "database_host": "db",
+  "database_port": 5432,
+  "database_published_ports": [],
+  "engine_build_run": "pending"
+}
