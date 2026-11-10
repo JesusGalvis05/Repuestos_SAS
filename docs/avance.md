@@ -13,15 +13,15 @@
 - [x] Pantalla de acceso, inicio protegido, perfil y administración responsive.
 - [x] Variables de entorno, scripts, depuración VS Code y Docker Compose.
 - [x] Pruebas Pytest con PostgreSQL real y pruebas frontend.
-- [ ] Verificar construcción y arranque de los contenedores en Docker (no está instalado en el equipo de implementación).
+- [x] Verificar construcción, salud, migraciones, comunicación y persistencia en Docker (9 de noviembre de 2026).
 
-La Fase 1 tiene implementación funcional y comprobaciones locales; su validación
-de contenedores queda pendiente. No se inicia la Fase 2 hasta cerrar ese criterio.
+La Fase 1 tiene implementación funcional y validación de contenedores aprobada.
+Esta entrega sigue limitada a DevOps; no se inicia la Fase 2.
 Los resultados concretos de ejecución se registran en `pruebas.md`.
 
 Adaptación académica Docker: Compose de dos servicios, diagnóstico de comunicación,
-CI y documento PDF preparados. Resultado actual: 31 pruebas backend aprobadas y
-una exclusiva de Docker omitida. Sigue pendiente ejecutar contenedores y Actions;
+CI y documento PDF preparados. Resultado actual: 32 pruebas backend aprobadas
+dentro de Docker, sin omisiones. Sigue pendiente la publicación y ejecución remota de Actions;
 el detalle y la rúbrica de 150 puntos están en `entrega-1/`.
 
 ## Fases conservadas, aún pendientes

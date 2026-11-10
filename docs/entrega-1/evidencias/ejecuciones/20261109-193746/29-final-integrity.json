@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-09T19:44:21.348002-05:00",
+  "status": "passed",
+  "scope": "Docker local; no representa GitHub Actions",
+  "api_uid_gid": "10001:10001",
+  "api_capabilities_dropped": [
+    "ALL"
+  ],
+  "api_security_options": [
+    "no-new-privileges:true"
+  ],
+  "database_published_ports": [],
+  "runtime_has_pytest": false,
+  "containers": [
+    {
+      "service": "api",
+      "id": "dd1838557cf2e324d5fd2be7223950cee63d263a86b0d86d02ffa5ec2cf43b7c",
+      "health": "healthy",
+      "networks": [
+        "jg-network"
+      ],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      }
+    },
+    {
+      "service": "db",
+      "id": "4e4e18e4687508ced14b82d40c80d6414e9b1db0449bb52a90949ef6de1f0e94",
+      "health": "healthy",
+      "networks": [
+        "jg-network"
+      ],
+      "ports": {
+        "5432/tcp": null
+      }
+    }
+  ],
+  "images": [
+    {
+      "tags": [
+        "jg-repuestos-api:academic"
+      ],
+      "id": "sha256:a78fc0639239134405c933e0315ad7bb2960d0a6033cbd70708d036188c5dbf7",
+      "repo_digests": []
+    },
+    {
+      "tags": [
+        "postgres:17.11-bookworm"
+      ],
+      "id": "sha256:018dbecf6a31cfed1f83c218b5e428a52ac389ad46e495f72831641db49d85a9",
+      "repo_digests": [
+        "postgres@sha256:665dc7b37ac52a17e298511414c21d23ffa4e6a6ef6225b3e5d59c7afb35e994"
+      ]
+    }
+  ],
+  "database_volumes": [
+    {
+      "name": "jg-repuestos_postgres_data",
+      "destination": "/var/lib/postgresql/data"
+    }
+  ]
+}

@@ -1,6 +1,25 @@
-# Capturas pendientes (sólo ejecuciones reales)
+# Capturas y evidencias reales
 
-Guardar PNG legibles, con comando y resultado visibles. No generar imágenes que
+Actualización: 9 de noviembre de 2026. Docker ya fue ejecutado: construcción,
+migraciones, salud, red, comunicación, persistencia y 32 pruebas aprobadas.
+Las salidas originales saneadas están en
+`../evidencias/ejecuciones/20261109-193746/` y sus extractos se incorporaron al PDF.
+
+Capturas HTTP ya obtenidas con Microsoft Edge headless sobre la API Docker:
+
+| Archivo disponible | Contenido real |
+| --- | --- |
+| [11-api-ready.png](11-api-ready.png) | Respuesta HTTP 200 de `/api/v1/ready` |
+| [12-swagger.png](12-swagger.png) | Swagger de JG Repuestos servido en el puerto 8000 |
+
+`capturas-http.json` registra URL, fecha y método de captura. No son imágenes
+generadas a partir de texto ni capturas de un pipeline remoto.
+
+## Capturas de consola y GitHub pendientes
+
+Las salidas de consola ya existen en TXT; si la evaluación exige PNG, capturar
+su visualización o repetir los comandos reales. Guardar imágenes legibles con
+comando y resultado visibles. No generar imágenes que
 imiten una consola ni marcar como aprobada una ejecución inexistente.
 
 | Archivo | Contenido exacto a capturar |

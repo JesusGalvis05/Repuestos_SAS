@@ -1,6 +1,7 @@
 """Genera el PDF académico desde Markdown y capturas reales opcionales."""
 
 from datetime import datetime
+import json
 from pathlib import Path
 import re
 import textwrap
@@ -28,6 +29,18 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = ROOT / "docs/entrega-1"
+
+
+def latest_docker_run():
+    for directory in sorted(
+        (DIRECTORY / "evidencias/ejecuciones").glob("*"), reverse=True
+    ):
+        result = directory / "resultado.json"
+        if result.exists():
+            report = json.loads(result.read_text(encoding="utf-8"))
+            if report.get("status") == "passed":
+                return directory
+    return None
 
 
 def docker_diagram(font):
@@ -95,6 +108,7 @@ def docker_diagram(font):
 
 
 def main():
+    docker_run = latest_docker_run()
     font, bold, mono = "Helvetica", "Helvetica-Bold", "Courier"
     for base in [Path("C:/Windows/Fonts"), Path("/usr/share/fonts/truetype/dejavu")]:
         regular = base / ("arial.ttf" if base.name == "Fonts" else "DejaVuSans.ttf")
@@ -183,7 +197,9 @@ def main():
             styles["JGBody"],
         ),
         Paragraph(
-            "Estado: pruebas locales aprobadas; Docker y ejecución GitHub pendientes.",
+            "Estado: Docker validado localmente; ejecución remota de GitHub pendiente."
+            if docker_run
+            else "Estado: pruebas locales aprobadas; Docker y ejecución GitHub pendientes.",
             styles["JGBody"],
         ),
         PageBreak(),
@@ -283,6 +299,55 @@ def main():
         story.append(Preformatted(summary, styles["JGCode"]))
     else:
         story.append(paragraph("Pendiente de incorporar salida real de Pytest."))
+    if docker_run:
+        story.extend(
+            [
+                PageBreak(),
+                Paragraph("Anexo: ejecuciones reales Docker", styles["JGHeading"]),
+                paragraph(
+                    f"Ejecución: {docker_run.name}. Los bloques siguientes son extractos de salidas originales saneadas; los archivos completos están en evidencias/ejecuciones/{docker_run.name}/."
+                ),
+            ]
+        )
+        for filename, title, limit in [
+            ("05-docker-build.txt", "Construcción de la imagen", 20),
+            ("07-compose-up.txt", "Arranque y salud de los servicios", 24),
+            ("08-compose-ps.txt", "Dos servicios y puertos", 15),
+            ("10-network-inspect.txt", "Inspección de jg-network", 85),
+            ("11-api-user.txt", "Usuario no privilegiado", 8),
+            ("12-alembic-current.txt", "Revisión Alembic", 10),
+            ("13-alembic-check.txt", "Correspondencia entre esquema y modelos", 14),
+            ("14-escritura-lectura-limpieza.txt", "Escritura, lectura y limpieza", 10),
+            ("15-persistencia-crear.txt", "Crear registro para persistencia", 8),
+            ("16-recrear-down.txt", "Recrear sin eliminar el volumen: parada", 14),
+            ("17-recrear-up.txt", "Recrear sin eliminar el volumen: arranque", 20),
+            ("18-persistencia-leer.txt", "Mismo UUID recuperado", 10),
+            ("19-persistencia-limpiar.txt", "Limpieza del registro temporal", 8),
+            ("22-pytest.txt", "Pytest dentro de api con PostgreSQL db", 18),
+            ("28-final-compose-ps.txt", "Estado final tras restaurar runtime", 12),
+        ]:
+            path = docker_run / filename
+            if not path.exists():
+                continue
+            source = path.read_text(encoding="utf-8").splitlines()
+            if len(source) > limit:
+                source = (
+                    source[:1]
+                    + ["[Extracto: se omiten líneas intermedias; ver archivo original]"]
+                    + source[-limit:]
+                )
+            text = "\n".join(
+                "\n".join(
+                    textwrap.wrap(
+                        line, 96, replace_whitespace=False, drop_whitespace=False
+                    )
+                )
+                if line
+                else ""
+                for line in source
+            )
+            story.append(Paragraph(markup(title), styles["JGHeading"]))
+            story.append(Preformatted(text, styles["JGCode"]))
     screenshots = sorted((DIRECTORY / "capturas").glob("*.png"))
     if screenshots:
         for file in screenshots:

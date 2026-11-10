@@ -8,13 +8,15 @@ Actividad: Contenedores Docker, Docker Compose y GitHub Actions.
 
 Estudiante, institución, asignatura y docente: completar con los datos reales antes de entregar.
 
-Fecha de preparación: 8 de noviembre de 2026. Zona horaria: America/Bogota.
+Fecha de preparación: 8 de noviembre de 2026. Actualización y validación Docker:
+9 de noviembre de 2026. Zona horaria: America/Bogota.
 
 Fecha límite: martes 10 de noviembre de 2026 a las 23:55.
 
 Repositorio GitHub: pendiente de publicar y registrar la URL real. No existe remoto configurado en esta revisión.
 
-Estado: implementación preparada y pruebas locales ejecutadas; validación de contenedores y pipeline pendiente por disponibilidad de Docker y cuenta GitHub.
+Estado: construcción, salud, migraciones, comunicación, persistencia y Pytest
+aprobados en Docker local. Publicación y ejecución remota de GitHub pendientes.
 
 ## 1. Introducción
 
@@ -79,9 +81,9 @@ Uvicorn. Un fallo de migración impide servir la API. No se usa create_all para
 evolucionar el esquema ni se crea un tercer servicio permanente.
 
 La imagen de PostgreSQL es postgres:17.11-bookworm. Ambas etiquetas se contrastaron
-con los manifiestos de Docker Official Images. Las etiquetas fijan versiones;
-la resolución de sus digest y la construcción efectiva requieren Docker y quedan
-pendientes. No se presenta una imagen no construida como validada.
+con los manifiestos de Docker Official Images. El 9 de noviembre se descargó
+PostgreSQL y se construyeron las imágenes de ejecución y pruebas con éxito. El
+log de construcción conserva el identificador SHA-256 real de la imagen obtenida.
 
 ## 6. Docker Compose
 
@@ -129,9 +131,9 @@ nombre de demostración, estado inactivo y ausencia de roles. Una prueba comprue
 que no puede eliminar un administrador normal. No se vacían tablas ni se borran
 datos operacionales. No se añade un endpoint público para esta prueba.
 
-Las pruebas locales de esta lógica se ejecutaron con PostgreSQL nativo aislado.
-Su aprobación no demuestra comunicación entre contenedores. La ejecución dentro
-de api debe confirmar host db y puerto de servidor 5432 cuando Docker esté disponible.
+La demostración se ejecutó dentro de api contra PostgreSQL db. El JSON real
+confirma host db, puerto configurado 5432, puerto consultado al servidor 5432 y
+cleanup=passed. También se aprobaron las pruebas de integración dentro de api.
 
 ## 8. Prueba de persistencia
 
@@ -139,8 +141,10 @@ scripts/docker_evidence.py crea otro registro marcado, conserva su UUID, ejecuta
 docker compose down sin -v, vuelve a levantar ambos contenedores, lee el mismo
 UUID y elimina únicamente ese registro. El volumen persiste entre ambos arranques.
 Si la limpieza falla, el informe guarda pending_demo_id para una recuperación
-limitada a ese registro. Esta secuencia está implementada, pero no ejecutada en
-Docker en este equipo.
+limitada a ese registro. La secuencia se ejecutó con éxito: se recuperó el UUID
+d9773fcd-b92d-4d3d-8e7d-2cae4e7ccb34 después de recrear ambos contenedores y se
+eliminó únicamente ese registro de demostración. Los logs originales conservan
+creación, parada, arranque, lectura y limpieza.
 
 ## 9. Integración continua
 
@@ -162,17 +166,22 @@ remoto ni una cuenta GitHub habilitada en este entorno.
 | --- | --- |
 | Revisión estática de archivos | 18 comprobaciones aprobadas; no sustituye Docker |
 | Suite backend con PostgreSQL nativo | 31 aprobadas, 1 omitida exclusiva de Docker |
-| Prueba temporal de escritura/lectura/limpieza | Aprobada con PostgreSQL nativo; incluida en la suite |
-| Protección contra limpieza de usuarios normales | Aprobada con PostgreSQL nativo |
+| Suite backend dentro de api contra db | 32 aprobadas, sin omisiones |
+| Prueba temporal de escritura/lectura/limpieza | Aprobada dentro de Docker mediante db:5432 |
+| Protección contra limpieza de usuarios normales | Aprobada también dentro de Docker |
 | Compose oficial portátil 2.39.4 | SHA-256 contrastado y config validado con código 0 |
-| Docker CLI y motor | No disponibles; recolector de ejecución registra blocked |
-| Build, red, salud y volumen Docker | Pendientes de ejecución real |
+| Docker CLI y motor | Docker Engine 29.9.2; Compose 5.6.1; motor Linux disponible |
+| Construcción y migraciones | Aprobadas; revisión 0001_identity y alembic check sin diferencias |
+| Red y salud | api y db saludables en jg-network; sólo 127.0.0.1:8000 publicado |
+| Persistencia | Mismo UUID recuperado tras down/up conservando el volumen |
+| Usuario y restauración | UID 10001 comprobado; imagen runtime restaurada tras las pruebas |
 | Repositorio remoto y pipeline aprobado | Pendientes de GitHub |
 
 El aviso de deprecación httpx de Starlette no provocó fallos en Pytest. Los logs
-reales están en evidencias/pytest-local.txt y la revisión en
-evidencias/validacion-estatica.json. Los informes blocked de evidencias/ejecuciones
-documentan la búsqueda real de Docker; no son una captura de contenedores activos.
+de PostgreSQL nativo están en evidencias/pytest-local.txt. Las pruebas Docker,
+logs de comandos y resultados del 9 de noviembre se conservan en
+evidencias/ejecuciones/20261109-193746/. Los informes blocked del 8 de noviembre
+se conservan como historial del entorno anterior, ya superado al instalar Docker.
 
 Se descargó Compose standalone oficial únicamente en .local/tools, excluido del
 repositorio. Se verificó su SHA-256 y se ejecutaron version, config --quiet y
@@ -180,17 +189,20 @@ config --format json con éxito. Las evidencias compose-validacion-real.json y
 compose-config-real.json documentan la validación y ocultan secretos. Disponer
 de este parser no instala ni sustituye Docker Engine.
 
-## 11. Evidencias que se deben incorporar
+## 11. Evidencias incorporadas y pendientes
 
-Faltan capturas reales de build, compose up, docker ps, network inspect,
-configuración saneada, escritura/lectura, recreación con persistencia, migraciones
-y logs, GitHub Actions aprobado y repositorio publicado. La lista precisa de
-archivos y comandos se conserva en capturas/README.md. No se han generado imágenes
-que imiten una consola ni resultados de CI inexistentes.
+El PDF incorpora extractos reales de build, compose up, docker ps, network inspect,
+escritura/lectura, recreación con persistencia, migraciones y Pytest. Los archivos
+completos saneados están incluidos en el repositorio. Se incorporan capturas
+reales del navegador para ready y Swagger, con URL y fecha en capturas-http.json.
+Siguen pendientes los PNG de consola, GitHub Actions remoto aprobado y repositorio publicado. La lista
+precisa de archivos y comandos se conserva en capturas/README.md. No se han
+generado imágenes que imiten una consola ni resultados de CI inexistentes.
 
 Antes de entregar se deben completar los datos de portada y la URL real del
-repositorio, ejecutar la demostración en Docker, incorporar las capturas y
-regenerar este PDF. La matriz de ocho criterios y sus 150 puntos está en rubrica.md.
+repositorio e incorporar las capturas y el pipeline remoto aprobado. La
+demostración Docker ya está ejecutada y documentada. La matriz de ocho criterios
+y sus 150 puntos está en rubrica.md.
 
 ## 12. Conclusiones
 
@@ -199,9 +211,10 @@ contrato verificable de conexión db:5432, migraciones previas al servidor y dat
 persistentes en un volumen. La demostración privada conserva la autenticación y
 limita sus cambios a usuarios temporales inactivos.
 
-Las pruebas locales aportan evidencia real de la lógica de acceso a datos y de
-limpieza segura. La aceptación de Docker y del pipeline continúa abierta: sólo
-puede cerrarse con ejecuciones reales, sus logs, capturas y el repositorio publicado.
+Las pruebas Docker aportan evidencia real de la comunicación y limpieza segura,
+además de persistencia tras recrear los contenedores. La validación técnica local
+de Docker está aprobada. La aceptación del pipeline remoto y de la entrega
+académica continúa pendiente del repositorio publicado, capturas y datos de portada.
 No se avanza a la Fase 2 ni se atribuyen puntos de evaluación sin revisión docente.
 
 ## 13. Referencias — APA 7

@@ -1,0 +1,4 @@
+$ docker compose exec -T api python -m app.diagnostics roundtrip
+{"status": "passed", "operation": "write-read-cleanup", "id": "ccb7789b-552d-4ddb-8720-a89de00a95ac", "host": "db", "configured_port": 5432, "server_port": 5432, "database": "jg_repuestos", "verified": ["id", "email", "full_name", "inactive", "no_roles"], "cleanup": "passed"}
+
+Exit code: 0

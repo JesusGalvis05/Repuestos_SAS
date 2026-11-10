@@ -171,10 +171,15 @@ imagen de ejecución sin herramientas de pruebas.
 
 ## Estado de validación y GitHub
 
-En este equipo Docker y WSL no están instalados. La revisión estática no equivale
-a construir ni ejecutar contenedores. Las evidencias distinguen pruebas locales
-con PostgreSQL nativo de pruebas Docker aún pendientes. No hay remoto GitHub
-configurado ni pipeline aprobado confirmado.
+El 9 de noviembre de 2026 se ejecutó la validación con Docker instalado:
+construcción, salud, migraciones, red, escritura/lectura y persistencia aprobadas.
+La suite dentro de api contra db obtuvo **32 pruebas aprobadas, sin omisiones**.
+Quedaron activos sólo api y db saludables, con la imagen runtime restaurada.
+Los resultados están en `docs/entrega-1/evidencias/ejecuciones/20261109-193746/`.
+La API responde en http://localhost:8000/api/v1/docs.
+
+No hay remoto GitHub configurado ni pipeline remoto aprobado confirmado; ejecutar
+el mismo procedimiento localmente no equivale a ejecutar GitHub Actions.
 
 Se validó además el archivo con Compose oficial portátil 2.39.4, sin instalar un
 motor: SHA-256 comprobado y `config --quiet` con salida 0. La configuración

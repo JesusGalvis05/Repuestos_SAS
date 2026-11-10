@@ -1,0 +1,56 @@
+$ docker compose build
+#1 [internal] load local bake definitions
+#1 reading from stdin 571B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 726B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 163B done
+#4 DONE 0.0s
+
+#5 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 3.33kB done
+#6 DONE 0.0s
+
+#7 [base 2/8] WORKDIR /app
+#7 CACHED
+
+#8 [base 3/8] COPY requirements.lock ./
+#8 CACHED
+
+#9 [base 5/8] COPY app ./app
+#9 CACHED
+
+#10 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+#10 CACHED
+
+#11 [base 6/8] COPY migrations ./migrations
+#11 CACHED
+
+#12 [base 7/8] COPY alembic.ini ./
+#12 CACHED
+
+#13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 writing image sha256:a78fc0639239134405c933e0315ad7bb2960d0a6033cbd70708d036188c5dbf7 done
+#14 naming to docker.io/library/jg-repuestos-api:academic done
+#14 DONE 0.0s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ Image jg-repuestos-api:academic Building 
+ Image jg-repuestos-api:academic Built 
+
+Exit code: 0

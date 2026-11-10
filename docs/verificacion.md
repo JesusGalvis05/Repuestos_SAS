@@ -47,14 +47,22 @@ Se corrigió la normalización de separadores de rutas en Windows. El contenedor
 No se ha realizado publicación pública: no hay cuenta de alojamiento conectada.
 Se propuso habilitar Railway para continuar ese despliegue.
 
-## Entrega Docker — Escenario 3
+## Entrega Docker — Escenario 3 (actualizado el 9 de noviembre)
 
 La entrega académica adapta el Compose a exactamente api y db, sin publicar
 PostgreSQL al host. La configuración fue validada con Compose standalone oficial
-2.39.4, checksum contrastado y `config --quiet` con salida 0. El motor Docker no
-está instalado: imágenes, red activa, persistencia al recrear y CI remoto siguen
-pendientes de ejecución real.
+2.39.4, checksum contrastado y `config --quiet` con salida 0. Tras instalar Docker,
+el 9 de noviembre se ejecutó la validación completa con Engine 29.9.2 y Compose
+5.6.1: construcción, salud, migraciones, red y puerto interno db:5432 aprobados.
 
-La suite actual obtuvo 31 pruebas backend aprobadas y una omitida exclusiva de
-Docker. Las dos pruebas frontend y la compilación aprobaron. El PDF académico de
-7 páginas y las evidencias reales, incluyendo las limitaciones, están en `entrega-1/`.
+La suite dentro de api obtuvo **32 pruebas aprobadas, sin omisiones**. La prueba
+de persistencia recuperó el mismo UUID después de recrear ambos contenedores,
+conservando el volumen, y limpió sólo su registro. Se restauró la imagen runtime
+sin Pytest y quedaron activos exactamente api y db saludables. UID 10001, CapDrop
+ALL y ausencia de puertos publicados en db se comprobaron por inspección real.
+
+El PDF actualizado incluye extractos de los logs y capturas HTTP reales de ready
+y Swagger. Evidencias: `entrega-1/evidencias/ejecuciones/20261109-193746/`.
+GitHub Actions remoto sigue pendiente: ejecutar su receta localmente no representa
+un pipeline aprobado en GitHub. Las capturas de consola y datos de portada aún
+deben completarse para la entrega académica.

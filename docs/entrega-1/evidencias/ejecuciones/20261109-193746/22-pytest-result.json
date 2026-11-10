@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "scope": "pytest dentro de api contra PostgreSQL db:5432",
+  "exit_code": 0,
+  "passed": 32,
+  "github_actions_run": false
+}

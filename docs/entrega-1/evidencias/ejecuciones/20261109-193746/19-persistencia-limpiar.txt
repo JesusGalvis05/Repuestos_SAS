@@ -1,0 +1,4 @@
+$ docker compose exec -T api python -m app.diagnostics delete --id d9773fcd-b92d-4d3d-8e7d-2cae4e7ccb34
+{"status": "passed", "operation": "delete", "id": "d9773fcd-b92d-4d3d-8e7d-2cae4e7ccb34"}
+
+Exit code: 0

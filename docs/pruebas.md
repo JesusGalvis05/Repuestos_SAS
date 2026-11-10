@@ -44,8 +44,10 @@ No se presentan esos casos futuros como pruebas aprobadas.
 
 Entorno de implementación: Windows, Python 3.12, Node 24 y PostgreSQL 18.4 local
 aislado en `127.0.0.1:55432`; servidor habitual sin cambios. Resultados finales:
-véase `verificacion.md`. Docker no está instalado: se deja CI para construir
-contenedores y verificar SPA → proxy → API → base de datos en Linux.
+véase `verificacion.md`. El 9 de noviembre se ejecutó Docker: construcción,
+migraciones, salud, escritura/lectura y persistencia aprobadas. Pytest dentro
+de api con PostgreSQL db obtuvo **32 pruebas aprobadas, sin omisiones**.
+Las evidencias están en `entrega-1/evidencias/ejecuciones/20261109-193746/`.
 
-La inspección visual en navegador y el uso manual con lector de pantalla siguen
-siendo comprobaciones de aceptación adicionales; no se infieren de compilar.
+Se capturaron y revisaron ready y Swagger en navegador real. La evaluación de
+accesibilidad del frontend con lector de pantalla sigue pendiente.

@@ -1,0 +1,6 @@
+$ docker ps --filter label=com.docker.compose.project=jg-repuestos
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                    PORTS                      NAMES
+4e7d215d7c3c   jg-repuestos-api:academic   "python -m app.deploy"   11 seconds ago   Up 5 seconds (healthy)    127.0.0.1:8000->8000/tcp   jg-repuestos-api-1
+ca47a6bbe308   postgres:17.11-bookworm     "docker-entrypoint.s…"   11 seconds ago   Up 11 seconds (healthy)   5432/tcp                   jg-repuestos-db-1
+
+Exit code: 0

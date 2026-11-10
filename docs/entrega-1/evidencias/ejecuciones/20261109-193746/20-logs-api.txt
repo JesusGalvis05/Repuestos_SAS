@@ -1,0 +1,9 @@
+$ docker compose logs --no-color --tail 150 api
+api-1  | INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+api-1  | INFO  [alembic.runtime.migration] Will assume transactional DDL.
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+Exit code: 0

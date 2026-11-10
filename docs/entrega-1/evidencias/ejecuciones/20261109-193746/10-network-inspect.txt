@@ -1,0 +1,67 @@
+$ docker network inspect jg-network
+[
+    {
+        "Name": "jg-network",
+        "Id": "6d8247de84f90372efe1bd36508af8b536e06cfef9c970a40744efce2b623163",
+        "Created": "2026-11-10T00:38:48.355577809Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "f1686f33d5a754be28a8566f587cec04f8a5e237744f124b9930fb674e91c748",
+            "com.docker.compose.network": "jg-network",
+            "com.docker.compose.project": "jg-repuestos",
+            "com.docker.compose.version": "5.6.1"
+        },
+        "Containers": {
+            "4e7d215d7c3c3b047f1e8f27ad648157cba9469b58bb977a5a1f179ffce75c4e": {
+                "Name": "jg-repuestos-api-1",
+                "EndpointID": "77614f3f379c833dd434dbc0e29e9e73625abc4f8b28a90d2b164436bb29c231",
+                "MacAddress": "0a:62:b8:a8:ca:f9",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            },
+            "ca47a6bbe30889fdd483e33a675c558a271a70b5cd8ea2e49a32fcf74027dce6": {
+                "Name": "jg-repuestos-db-1",
+                "EndpointID": "d8492f39d1f76861dc7758a7df29fe7f1b2d24f8af9ca7bfbdef5ce49e95ecd0",
+                "MacAddress": "8e:20:94:f1:9a:8b",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.18.0.0/16": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 65531
+                    }
+                }
+            }
+        }
+    }
+]
+
+Exit code: 0

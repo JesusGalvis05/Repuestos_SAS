@@ -1,0 +1,14 @@
+$ docker compose up -d --no-build --force-recreate --wait --wait-timeout 180 api
+ Container jg-repuestos-db-1 Running 
+ Container jg-repuestos-api-1 Recreate 
+ Container jg-repuestos-api-1 Recreated 
+ Container jg-repuestos-db-1 Waiting 
+ Container jg-repuestos-db-1 Healthy 
+ Container jg-repuestos-api-1 Starting 
+ Container jg-repuestos-api-1 Started 
+ Container jg-repuestos-db-1 Waiting 
+ Container jg-repuestos-api-1 Waiting 
+ Container jg-repuestos-db-1 Healthy 
+ Container jg-repuestos-api-1 Healthy 
+
+Exit code: 0
