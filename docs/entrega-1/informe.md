@@ -13,10 +13,15 @@ Fecha de preparación: 8 de noviembre de 2026. Actualización y validación Dock
 
 Fecha límite: martes 10 de noviembre de 2026 a las 23:55.
 
-Repositorio GitHub: pendiente de publicar y registrar la URL real. No existe remoto configurado en esta revisión.
+Repositorio GitHub: https://github.com/JesusGalvis05/Repuestos_SAS
+
+El remoto origin está configurado. La consulta remota requiere autenticación y
+la API pública respondió 404; no se pudo confirmar desde esta sesión si los
+commits ya están publicados ni si Actions terminó en verde.
 
 Estado: construcción, salud, migraciones, comunicación, persistencia y Pytest
-aprobados en Docker local. Publicación y ejecución remota de GitHub pendientes.
+aprobados en Docker local. Verificación de los commits publicados y de la
+ejecución remota de GitHub pendiente de autenticación.
 
 ## 1. Introducción
 
@@ -157,8 +162,8 @@ base db; no se agrega un tercer servicio. Un job separado prueba y compila React
 
 Los artefactos contienen salidas saneadas y códigos de retorno. El apagado usa
 if: always(). No se publican imágenes en registros externos. La configuración del
-workflow existe; su ejecución aprobada en GitHub no está verificada porque no hay
-remoto ni una cuenta GitHub habilitada en este entorno.
+workflow existe y origin está configurado; su ejecución aprobada en GitHub no
+está verificada porque la consulta requiere autenticación en este entorno.
 
 ## 10. Resultados reales y límites
 
@@ -199,8 +204,8 @@ Siguen pendientes los PNG de consola, GitHub Actions remoto aprobado y repositor
 precisa de archivos y comandos se conserva en capturas/README.md. No se han
 generado imágenes que imiten una consola ni resultados de CI inexistentes.
 
-Antes de entregar se deben completar los datos de portada y la URL real del
-repositorio e incorporar las capturas y el pipeline remoto aprobado. La
+Antes de entregar se deben completar los datos de portada, confirmar el acceso
+al repositorio enlazado e incorporar las capturas y el pipeline remoto aprobado. La
 demostración Docker ya está ejecutada y documentada. La matriz de ocho criterios
 y sus 150 puntos está en rubrica.md.
 

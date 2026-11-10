@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "excluded_cases": 34,
+  "preserved_cases": 13,
+  "tracked_files_matching_ignore": [],
+  "environment_examples_preserved": true,
+  "academic_evidence_preserved": true
+}

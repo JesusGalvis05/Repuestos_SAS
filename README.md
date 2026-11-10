@@ -154,8 +154,8 @@ usuario con permiso para crear esquemas. Las pruebas usan Alembic, no
 El workflow `.github/workflows/docker-ci.yml` está configurado para comprobar
 build, salud, migraciones, comunicación real, persistencia, Pytest y frontend.
 Utiliza Buildx y apaga los dos servicios mediante `if: always()`. No publica imágenes.
-Su ejecución en GitHub permanece pendiente hasta publicar el repositorio y
-obtener una ejecución aprobada. [Matriz de pruebas](docs/pruebas.md).
+La ejecución aprobada en GitHub aún no se ha podido confirmar; hace falta acceso
+autenticado para comprobar el check remoto. [Matriz de pruebas](docs/pruebas.md).
 
 También puede ejecutar Pytest dentro de `api`, manteniendo los mismos dos servicios:
 
@@ -178,8 +178,10 @@ Quedaron activos sólo api y db saludables, con la imagen runtime restaurada.
 Los resultados están en `docs/entrega-1/evidencias/ejecuciones/20261109-193746/`.
 La API responde en http://localhost:8000/api/v1/docs.
 
-No hay remoto GitHub configurado ni pipeline remoto aprobado confirmado; ejecutar
-el mismo procedimiento localmente no equivale a ejecutar GitHub Actions.
+El remoto `origin` apunta a https://github.com/JesusGalvis05/Repuestos_SAS.
+La consulta remota requiere autenticación: aún no se han confirmado los commits
+publicados ni el pipeline remoto aprobado. La validación local es evidencia de
+Docker; la rúbrica también exige una ejecución real de GitHub Actions en verde.
 
 Se validó además el archivo con Compose oficial portátil 2.39.4, sin instalar un
 motor: SHA-256 comprobado y `config --quiet` con salida 0. La configuración
@@ -190,10 +192,13 @@ Para repetir con un Compose standalone ya descargado:
 .\.venv\Scripts\python.exe scripts/validate_compose.py --binary .local/tools/docker-compose.exe
 ```
 
-Los commits locales conservan el historial. Para publicar, cree/conecte un
-repositorio GitHub vacío, añada su URL como `origin` y haga push de la rama actual.
-Use autenticación del gestor de credenciales; nunca introduzca un token en la URL.
-Anote la URL real en `docs/entrega-1/informe.md` y adjunte la ejecución de Actions.
+Los commits locales conservan el historial. Una vez autenticado en GitHub,
+verifique las ramas remotas y publique los commits de trabajo mediante un push
+normal, sin forzar ni reemplazar el historial remoto. Use el gestor de credenciales;
+nunca introduzca un token en la URL. Adjunte la ejecución real de Actions aprobada.
+
+La rúbrica solicita commits frecuentes y descriptivos; no exige múltiples ramas.
+Las ramas y pull requests son una práctica opcional para cambios futuros.
 
 ## Generar el PDF académico
 

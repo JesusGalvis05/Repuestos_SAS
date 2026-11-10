@@ -5,7 +5,7 @@ Los estados no representan una calificación otorgada por el docente.
 
 | Criterio | Puntos | Estado de implementación | Evidencia / validación pendiente |
 | --- | ---: | --- | --- |
-| 1. Repositorio GitHub | 15 | Estructura, README, ignores y commits locales preparados | Historial `git log`; falta publicar URL real y confirmar acceso GitHub |
+| 1. Repositorio GitHub | 15 | Estructura, README, ignores, commits y origin configurados | https://github.com/JesusGalvis05/Repuestos_SAS; confirmar commits publicados mediante acceso autenticado |
 | 2. Contenedor aplicación | 20 | Construcción real aprobada; Python específico, locks, Uvicorn y Alembic | Ejecución Docker: `05-docker-build.txt`, `12-alembic-current.txt`, `13-alembic-check.txt` |
 | 3. Segundo contenedor | 15 | PostgreSQL saludable; volumen conserva datos al recrear; sin puerto host | `07-compose-up.txt`, `18-persistencia-leer.txt`, `28-final-compose-ps.txt` |
 | 4. Docker Compose | 20 | Config/build/up aprobados; sólo `api`/`db` saludables en `jg-network` | `03-compose-config.txt`, `06-compose-build.txt`, `10-network-inspect.txt` |
