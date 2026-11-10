@@ -1,0 +1,6 @@
+$ docker compose exec -T api alembic current
+0001_identity (head)
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+
+Exit code: 0

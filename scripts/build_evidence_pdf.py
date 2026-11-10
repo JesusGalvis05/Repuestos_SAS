@@ -43,6 +43,20 @@ def latest_docker_run():
     return None
 
 
+def latest_github_run():
+    for path in sorted(
+        (DIRECTORY / "evidencias/github-actions").glob("*/github-run.json"),
+        reverse=True,
+    ):
+        report = json.loads(path.read_text(encoding="utf-8"))
+        if (
+            report.get("status") == "completed"
+            and report.get("conclusion") == "success"
+        ):
+            return path.parent, report
+    return None
+
+
 def docker_diagram(font):
     drawing = Drawing(500, 195)
     drawing.add(
@@ -109,6 +123,7 @@ def docker_diagram(font):
 
 def main():
     docker_run = latest_docker_run()
+    github_run = latest_github_run()
     font, bold, mono = "Helvetica", "Helvetica-Bold", "Courier"
     for base in [Path("C:/Windows/Fonts"), Path("/usr/share/fonts/truetype/dejavu")]:
         regular = base / ("arial.ttf" if base.name == "Fonts" else "DejaVuSans.ttf")
@@ -197,7 +212,9 @@ def main():
             styles["JGBody"],
         ),
         Paragraph(
-            "Estado: Docker validado localmente; ejecución remota de GitHub pendiente."
+            "Estado: Docker y GitHub Actions aprobados; capturas de consola y portada pendientes."
+            if github_run
+            else "Estado: Docker validado localmente; ejecución remota de GitHub pendiente."
             if docker_run
             else "Estado: pruebas locales aprobadas; Docker y ejecución GitHub pendientes.",
             styles["JGBody"],
@@ -348,6 +365,44 @@ def main():
             )
             story.append(Paragraph(markup(title), styles["JGHeading"]))
             story.append(Preformatted(text, styles["JGCode"]))
+    if github_run:
+        directory, report = github_run
+        story.extend(
+            [
+                PageBreak(),
+                Paragraph("Anexo: GitHub Actions remoto aprobado", styles["JGHeading"]),
+                paragraph(
+                    "Fuente: GitHub REST API autenticada y artefactos originales de la ejecución. Esto corresponde a una ejecución real por push, distinta de la prueba Docker local."
+                ),
+                Paragraph(
+                    f'<link href="{escape(report["url"])}" color="blue">{escape(report["url"])}</link>',
+                    styles["JGBody"],
+                ),
+                paragraph(
+                    f"Commit validado: {report['head_sha']} · Resultado: {report['conclusion']}."
+                ),
+            ]
+        )
+        completed = datetime.fromisoformat(
+            report["updated_at"].replace("Z", "+00:00")
+        ).astimezone(ZoneInfo("America/Bogota"))
+        story.append(
+            paragraph(
+                f"Verificación de cierre: {completed.strftime('%Y-%m-%d %H:%M %z')} (America/Bogota)."
+            )
+        )
+        for job in report["jobs"]:
+            story.append(paragraph(f"Trabajo {job['name']}: {job['conclusion']}."))
+        result_path = directory / "22-pytest.txt"
+        if result_path.exists():
+            source = result_path.read_text(encoding="utf-8").splitlines()
+            excerpt = "\n".join(source[:2] + source[-4:])
+            story.append(Preformatted(excerpt, styles["JGCode"]))
+        story.append(
+            paragraph(
+                f"Los logs completos, resultados de comunicación/persistencia y metadatos están en evidencias/github-actions/{directory.name}/. La captura de la interfaz web de Actions queda por incorporar."
+            )
+        )
     screenshots = sorted((DIRECTORY / "capturas").glob("*.png"))
     if screenshots:
         for file in screenshots:

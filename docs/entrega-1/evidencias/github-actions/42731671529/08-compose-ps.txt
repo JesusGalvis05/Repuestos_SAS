@@ -1,0 +1,6 @@
+$ docker compose ps
+NAME                 IMAGE                       COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+jg-repuestos-api-1   jg-repuestos-api:academic   "python -m app.deploy"   api       11 seconds ago   Up 5 seconds (healthy)    127.0.0.1:8000->8000/tcp
+jg-repuestos-db-1    postgres:17.11-bookworm     "docker-entrypoint.s…"   db        11 seconds ago   Up 11 seconds (healthy)   5432/tcp
+
+Exit code: 0

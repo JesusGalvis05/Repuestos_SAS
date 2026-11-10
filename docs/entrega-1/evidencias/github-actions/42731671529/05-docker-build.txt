@@ -1,0 +1,192 @@
+$ docker build --target runtime --tag jg-repuestos-api:academic backend
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 726B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#2 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 319B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 54.72kB 0.0s done
+#5 DONE 0.0s
+
+#6 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#6 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df done
+#6 sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 6.55kB / 6.55kB done
+#6 sha256:0f086103b026048cc50cb5da25ec435c023c5241a83fc44daea593377abc61c4 1.75kB / 1.75kB done
+#6 sha256:313cf8f190a1abab00472c1f0c950c10486c22114bcd8aef2a8198fb587a6d18 5.68kB / 5.68kB done
+#6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0B / 3.34MB 0.1s
+#6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0B / 13.68MB 0.1s
+#6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 0B / 249B 0.1s
+#6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 3.34MB / 3.34MB 0.2s done
+#6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 12.58MB / 13.68MB 0.2s
+#6 extracting sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0.1s
+#6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.4s
+#6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 249B / 249B 0.4s
+#6 extracting sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0.1s done
+#6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.5s done
+#6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 249B / 249B 0.5s done
+#6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0.1s
+#6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0.5s done
+#6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092
+#6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 done
+#6 DONE 1.6s
+
+#7 [base 2/8] WORKDIR /app
+#7 DONE 0.0s
+
+#8 [base 3/8] COPY requirements.lock ./
+#8 DONE 0.1s
+
+#9 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+#9 1.283 Collecting alembic==1.20.1 (from -r requirements.lock (line 2))
+#9 1.330   Downloading alembic-1.20.1-py3-none-any.whl.metadata (7.3 kB)
+#9 1.341 Collecting annotated-doc==0.0.5 (from -r requirements.lock (line 3))
+#9 1.349   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#9 1.363 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 4))
+#9 1.370   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#9 1.390 Collecting anyio==4.16.0 (from -r requirements.lock (line 5))
+#9 1.397   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#9 1.415 Collecting argon2-cffi==25.1.0 (from -r requirements.lock (line 6))
+#9 1.422   Downloading argon2_cffi-25.1.0-py3-none-any.whl.metadata (4.1 kB)
+#9 1.436 Collecting argon2-cffi-bindings==26.1.0 (from -r requirements.lock (line 7))
+#9 1.444   Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+#9 1.531 Collecting cffi==2.1.1 (from -r requirements.lock (line 8))
+#9 1.548   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#9 1.563 Collecting click==8.5.1 (from -r requirements.lock (line 9))
+#9 1.572   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#9 1.585 Collecting dnspython==2.9.2 (from -r requirements.lock (line 10))
+#9 1.593   Downloading dnspython-2.9.2-py3-none-any.whl.metadata (5.8 kB)
+#9 1.609 Collecting email-validator==2.3.0 (from -r requirements.lock (line 11))
+#9 1.617   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+#9 1.684 Collecting fastapi==0.162.2 (from -r requirements.lock (line 12))
+#9 1.695   Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+#9 1.798 Collecting greenlet==3.5.6 (from -r requirements.lock (line 13))
+#9 1.806   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#9 1.817 Collecting h11==0.16.0 (from -r requirements.lock (line 14))
+#9 1.825   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#9 1.852 Collecting httptools==0.9.0 (from -r requirements.lock (line 15))
+#9 1.860   Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+#9 1.873 Collecting idna==3.20 (from -r requirements.lock (line 16))
+#9 1.881   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#9 1.897 Collecting mako==1.4.3 (from -r requirements.lock (line 17))
+#9 1.906   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+#9 1.944 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 18))
+#9 1.952   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 1.970 Collecting opentelemetry-api==1.45.2 (from -r requirements.lock (line 19))
+#9 1.977   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#9 1.992 Collecting psycopg==3.3.8 (from -r requirements.lock (line 20))
+#9 2.001   Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+#9 2.116 Collecting psycopg-binary==3.3.8 (from -r requirements.lock (line 21))
+#9 2.124   Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+#9 2.133 Collecting pwdlib==0.3.1 (from -r requirements.lock (line 22))
+#9 2.142   Downloading pwdlib-0.3.1-py3-none-any.whl.metadata (5.6 kB)
+#9 2.154 Collecting pycparser==3.12 (from -r requirements.lock (line 23))
+#9 2.163   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+#9 2.240 Collecting pydantic==2.14.3 (from -r requirements.lock (line 24))
+#9 2.248   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+#9 2.749 Collecting pydantic-core==2.50.4 (from -r requirements.lock (line 25))
+#9 2.757   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#9 2.772 Collecting pydantic-settings==2.16.2 (from -r requirements.lock (line 26))
+#9 2.783   Downloading pydantic_settings-2.16.2-py3-none-any.whl.metadata (4.0 kB)
+#9 2.799 Collecting pyjwt==2.15.1 (from -r requirements.lock (line 27))
+#9 2.807   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+#9 2.822 Collecting python-dotenv==1.2.4 (from -r requirements.lock (line 28))
+#9 2.830   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+#9 2.857 Collecting pyyaml==6.0.3 (from -r requirements.lock (line 29))
+#9 2.865   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#9 3.120 Collecting sqlalchemy==2.0.57 (from -r requirements.lock (line 30))
+#9 3.131   Downloading sqlalchemy-2.0.57-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.6 kB)
+#9 3.161 Collecting starlette==1.10.0 (from -r requirements.lock (line 31))
+#9 3.169   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#9 3.185 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 32))
+#9 3.193   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 3.204 Collecting typing-inspection==0.4.5 (from -r requirements.lock (line 33))
+#9 3.212   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#9 3.225 Collecting tzdata==2026.6 (from -r requirements.lock (line 34))
+#9 3.233   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 3.256 Collecting uvicorn==0.54.0 (from -r requirements.lock (line 35))
+#9 3.265   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#9 3.320 Collecting watchfiles==1.3.0 (from -r requirements.lock (line 36))
+#9 3.328   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#9 3.417 Collecting websockets==17.4 (from -r requirements.lock (line 37))
+#9 3.432   Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+#9 3.557 Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#9 3.573 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#9 3.583 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 3.592 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#9 3.601 Downloading argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+#9 3.610 Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (26 kB)
+#9 3.619 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#9 3.628 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#9 3.638 Downloading dnspython-2.9.2-py3-none-any.whl (360 kB)
+#9 3.647 Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+#9 3.657 Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+#9 3.668 Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+#9 3.671    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 544.5 MB/s eta 0:00:00
+#9 3.680 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 3.688 Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (552 kB)
+#9 3.691    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.8/552.8 kB 579.8 MB/s eta 0:00:00
+#9 3.699 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 3.707 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#9 3.715 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 3.723 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#9 3.731 Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+#9 3.739 Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+#9 3.769    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 191.8 MB/s eta 0:00:00
+#9 3.779 Downloading pwdlib-0.3.1-py3-none-any.whl (9.3 kB)
+#9 3.788 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+#9 3.796 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#9 3.806 Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#9 3.814    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 319.7 MB/s eta 0:00:00
+#9 3.823 Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+#9 3.832 Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+#9 3.840 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#9 3.849 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#9 3.853    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 713.3 MB/s eta 0:00:00
+#9 3.861 Downloading sqlalchemy-2.0.57-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.5 MB)
+#9 3.874    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 313.7 MB/s eta 0:00:00
+#9 3.883 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#9 3.894 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 3.904 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#9 3.913 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#9 3.921 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#9 3.931 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#9 3.940 Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+#9 4.023 Installing collected packages: websockets, tzdata, typing-extensions, pyyaml, python-dotenv, pyjwt, pycparser, pwdlib, psycopg-binary, markupsafe, idna, httptools, h11, greenlet, dnspython, click, annotated-types, annotated-doc, uvicorn, typing-inspection, sqlalchemy, pydantic-core, psycopg, opentelemetry-api, mako, email-validator, cffi, anyio, watchfiles, starlette, pydantic, argon2-cffi-bindings, alembic, pydantic-settings, fastapi, argon2-cffi
+#9 7.199 Successfully installed alembic-1.20.1 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 argon2-cffi-25.1.0 argon2-cffi-bindings-26.1.0 cffi-2.1.1 click-8.5.1 dnspython-2.9.2 email-validator-2.3.0 fastapi-0.162.2 greenlet-3.5.6 h11-0.16.0 httptools-0.9.0 idna-3.20 mako-1.4.3 markupsafe-3.0.4 opentelemetry-api-1.45.2 psycopg-3.3.8 psycopg-binary-3.3.8 pwdlib-0.3.1 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 pyjwt-2.15.1 python-dotenv-1.2.4 pyyaml-6.0.3 sqlalchemy-2.0.57 starlette-1.10.0 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 uvicorn-0.54.0 watchfiles-1.3.0 websockets-17.4
+#9 7.199 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 DONE 8.6s
+
+#10 [base 5/8] COPY app ./app
+#10 DONE 0.0s
+
+#11 [base 6/8] COPY migrations ./migrations
+#11 DONE 0.0s
+
+#12 [base 7/8] COPY alembic.ini ./
+#12 DONE 0.0s
+
+#13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+#13 DONE 0.4s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 1.9s done
+#14 writing image sha256:913ca19c6df9989cbd45d3069513d26d48ace86fb9db73be8855dd6582a4c3c3 done
+#14 naming to docker.io/library/jg-repuestos-api:academic done
+#14 DONE 1.9s
+
+Exit code: 0

@@ -1,0 +1,13 @@
+$ docker compose down
+ Container jg-repuestos-api-1  Stopping
+ Container jg-repuestos-api-1  Stopped
+ Container jg-repuestos-api-1  Removing
+ Container jg-repuestos-api-1  Removed
+ Container jg-repuestos-db-1  Stopping
+ Container jg-repuestos-db-1  Stopped
+ Container jg-repuestos-db-1  Removing
+ Container jg-repuestos-db-1  Removed
+ Network jg-network  Removing
+ Network jg-network  Removed
+
+Exit code: 0

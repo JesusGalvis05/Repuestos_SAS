@@ -1,0 +1,4 @@
+$ docker compose version
+Docker Compose version v2.38.2
+
+Exit code: 0

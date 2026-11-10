@@ -1,0 +1,19 @@
+$ docker compose up -d --wait --wait-timeout 180
+ Network jg-network  Creating
+ Network jg-network  Created
+ Container jg-repuestos-db-1  Creating
+ Container jg-repuestos-db-1  Created
+ Container jg-repuestos-api-1  Creating
+ Container jg-repuestos-api-1  Created
+ Container jg-repuestos-db-1  Starting
+ Container jg-repuestos-db-1  Started
+ Container jg-repuestos-db-1  Waiting
+ Container jg-repuestos-db-1  Healthy
+ Container jg-repuestos-api-1  Starting
+ Container jg-repuestos-api-1  Started
+ Container jg-repuestos-db-1  Waiting
+ Container jg-repuestos-api-1  Waiting
+ Container jg-repuestos-db-1  Healthy
+ Container jg-repuestos-api-1  Healthy
+
+Exit code: 0

@@ -17,6 +17,13 @@ generadas a partir de texto ni capturas de un pipeline remoto.
 
 ## Capturas de consola y GitHub pendientes
 
+El push y el workflow remoto ya se comprobaron. Para `09-github-actions.png`,
+capturar la ejecución real aprobada:
+https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/42731671529
+
+Los metadatos y logs remotos descargados están en
+`../evidencias/github-actions/42731671529/`; todavía falta su captura de interfaz.
+
 Las salidas de consola ya existen en TXT; si la evaluación exige PNG, capturar
 su visualización o repetir los comandos reales. Guardar imágenes legibles con
 comando y resultado visibles. No generar imágenes que
@@ -35,6 +42,7 @@ imiten una consola ni marcar como aprobada una ejecución inexistente.
 | 09-github-actions.png | URL visible, commit y workflow aprobado con todos los pasos |
 | 10-repositorio.png | Repositorio GitHub real, carpetas frontend/backend, README y commits |
 
-Pendiente también: nombre del estudiante, institución, asignatura, docente y URL
-real del repositorio. Al capturar, ocultar contraseñas, cookies, tokens y `.env`.
+Pendiente también: nombre del estudiante, institución, asignatura y docente. La
+URL del repositorio ya está incorporada al informe. Al capturar, ocultar
+contraseñas, cookies, tokens y `.env`.
 Regenerar el PDF después de incorporar resultados y actualizar el informe.

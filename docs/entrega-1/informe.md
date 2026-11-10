@@ -15,13 +15,13 @@ Fecha límite: martes 10 de noviembre de 2026 a las 23:55.
 
 Repositorio GitHub: https://github.com/JesusGalvis05/Repuestos_SAS
 
-El remoto origin está configurado. La consulta remota requiere autenticación y
-la API pública respondió 404; no se pudo confirmar desde esta sesión si los
-commits ya están publicados ni si Actions terminó en verde.
+El remoto origin está configurado y el push se verificó: master contiene el
+commit 18aea1ef792fe50464c9fb44abc122b4023a2613 y sus cuatro commits de desarrollo.
+GitHub Actions terminó aprobado en ambos trabajos, docker y frontend.
 
 Estado: construcción, salud, migraciones, comunicación, persistencia y Pytest
-aprobados en Docker local. Verificación de los commits publicados y de la
-ejecución remota de GitHub pendiente de autenticación.
+aprobados en Docker local y en GitHub Actions remoto. Pendientes gráficos:
+capturas de consola/interfaz Actions y datos académicos de portada.
 
 ## 1. Introducción
 
@@ -162,8 +162,16 @@ base db; no se agrega un tercer servicio. Un job separado prueba y compila React
 
 Los artefactos contienen salidas saneadas y códigos de retorno. El apagado usa
 if: always(). No se publican imágenes en registros externos. La configuración del
-workflow existe y origin está configurado; su ejecución aprobada en GitHub no
-está verificada porque la consulta requiere autenticación en este entorno.
+workflow se ejecutó realmente por push y terminó success el 9 de noviembre de
+2026 a las 19:55 (America/Bogota). Ambos trabajos aprobaron; se verificaron
+comunicación, persistencia, 32 pruebas backend, frontend y apagado de contenedores.
+
+Ejecución remota aprobada:
+https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/42731671529
+
+Los artefactos originales y los metadatos consultados mediante la API autenticada
+se conservan en evidencias/github-actions/42731671529/. No se conservan tokens
+ni URLs de descarga firmadas. La evidencia identifica el commit 18aea1e validado.
 
 ## 10. Resultados reales y límites
 
@@ -180,7 +188,8 @@ está verificada porque la consulta requiere autenticación en este entorno.
 | Red y salud | api y db saludables en jg-network; sólo 127.0.0.1:8000 publicado |
 | Persistencia | Mismo UUID recuperado tras down/up conservando el volumen |
 | Usuario y restauración | UID 10001 comprobado; imagen runtime restaurada tras las pruebas |
-| Repositorio remoto y pipeline aprobado | Pendientes de GitHub |
+| Repositorio remoto y pipeline aprobado | Push verificado; ejecución 42731671529 en success |
+| Pytest en GitHub Actions | 32 pruebas aprobadas; comunicación y persistencia aprobadas |
 
 El aviso de deprecación httpx de Starlette no provocó fallos en Pytest. Los logs
 de PostgreSQL nativo están en evidencias/pytest-local.txt. Las pruebas Docker,
@@ -200,12 +209,13 @@ El PDF incorpora extractos reales de build, compose up, docker ps, network inspe
 escritura/lectura, recreación con persistencia, migraciones y Pytest. Los archivos
 completos saneados están incluidos en el repositorio. Se incorporan capturas
 reales del navegador para ready y Swagger, con URL y fecha en capturas-http.json.
-Siguen pendientes los PNG de consola, GitHub Actions remoto aprobado y repositorio publicado. La lista
+Se incluyen además logs y metadatos de GitHub Actions remoto aprobado. Siguen
+pendientes los PNG de consola y de la interfaz de GitHub Actions. La lista
 precisa de archivos y comandos se conserva en capturas/README.md. No se han
 generado imágenes que imiten una consola ni resultados de CI inexistentes.
 
-Antes de entregar se deben completar los datos de portada, confirmar el acceso
-al repositorio enlazado e incorporar las capturas y el pipeline remoto aprobado. La
+Antes de entregar se deben completar los datos de portada e incorporar las
+capturas pendientes. El repositorio y el pipeline remoto ya están verificados. La
 demostración Docker ya está ejecutada y documentada. La matriz de ocho criterios
 y sus 150 puntos está en rubrica.md.
 
@@ -218,8 +228,8 @@ limita sus cambios a usuarios temporales inactivos.
 
 Las pruebas Docker aportan evidencia real de la comunicación y limpieza segura,
 además de persistencia tras recrear los contenedores. La validación técnica local
-de Docker está aprobada. La aceptación del pipeline remoto y de la entrega
-académica continúa pendiente del repositorio publicado, capturas y datos de portada.
+de Docker y el pipeline remoto están aprobados. Para completar el documento
+académico faltan las capturas exigidas por la actividad y los datos de portada.
 No se avanza a la Fase 2 ni se atribuyen puntos de evaluación sin revisión docente.
 
 ## 13. Referencias — APA 7

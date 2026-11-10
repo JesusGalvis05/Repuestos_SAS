@@ -1,0 +1,262 @@
+{
+  "started_at": "2026-11-09T19:53:19.663570-05:00",
+  "status": "passed",
+  "commands": [
+    {
+      "evidence": "01-docker-version.txt",
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "02-compose-version.txt",
+      "command": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "03-compose-config.txt",
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "04-postgres-pull.txt",
+      "command": [
+        "docker",
+        "compose",
+        "pull",
+        "db"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "05-docker-build.txt",
+      "command": [
+        "docker",
+        "build",
+        "--target",
+        "runtime",
+        "--tag",
+        "jg-repuestos-api:academic",
+        "backend"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "06-compose-build.txt",
+      "command": [
+        "docker",
+        "compose",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "07-compose-up.txt",
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "08-compose-ps.txt",
+      "command": [
+        "docker",
+        "compose",
+        "ps"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "09-docker-ps.txt",
+      "command": [
+        "docker",
+        "ps",
+        "--filter",
+        "label=com.docker.compose.project=jg-repuestos"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "10-network-inspect.txt",
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "jg-network"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "11-api-user.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "id",
+        "-u"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "12-alembic-current.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "alembic",
+        "current"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "13-alembic-check.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "alembic",
+        "check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "14-escritura-lectura-limpieza.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-m",
+        "app.diagnostics",
+        "roundtrip"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "15-persistencia-crear.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-m",
+        "app.diagnostics",
+        "create"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "16-recrear-down.txt",
+      "command": [
+        "docker",
+        "compose",
+        "down"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "17-recrear-up.txt",
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "18-persistencia-leer.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-m",
+        "app.diagnostics",
+        "read",
+        "--id",
+        "c99b56fc-964b-406a-861f-ba3c1470c1d8"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "19-persistencia-limpiar.txt",
+      "command": [
+        "docker",
+        "compose",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-m",
+        "app.diagnostics",
+        "delete",
+        "--id",
+        "c99b56fc-964b-406a-861f-ba3c1470c1d8"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "20-logs-api.txt",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--no-color",
+        "--tail",
+        "150",
+        "api"
+      ],
+      "exit_code": 0
+    },
+    {
+      "evidence": "21-logs-db.txt",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--no-color",
+        "--tail",
+        "150",
+        "db"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "communication": "passed",
+  "persistence": "passed",
+  "finished_at": "2026-11-09T19:54:38.064008-05:00"
+}

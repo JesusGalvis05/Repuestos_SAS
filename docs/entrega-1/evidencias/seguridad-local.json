@@ -1,7 +1,7 @@
 {
   "scope": "comparación de archivos versionados/versionables con secretos locales conocidos; no sustituye un escáner universal",
   "status": "passed",
-  "files_checked": 149,
+  "files_checked": 174,
   "matches": [],
   "secret_values_in_report": false
 }

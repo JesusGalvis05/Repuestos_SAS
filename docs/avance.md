@@ -21,7 +21,7 @@ Los resultados concretos de ejecución se registran en `pruebas.md`.
 
 Adaptación académica Docker: Compose de dos servicios, diagnóstico de comunicación,
 CI y documento PDF preparados. Resultado actual: 32 pruebas backend aprobadas
-dentro de Docker, sin omisiones. Sigue pendiente la publicación y ejecución remota de Actions;
+dentro de Docker, sin omisiones. Publicación y Actions remoto aprobados y verificados;
 el detalle y la rúbrica de 150 puntos están en `entrega-1/`.
 
 ## Fases conservadas, aún pendientes

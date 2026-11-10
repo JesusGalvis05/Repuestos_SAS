@@ -1,0 +1,54 @@
+$ docker network inspect jg-network
+[
+    {
+        "Name": "jg-network",
+        "Id": "4ad467f269b3e3c65ac04e6618eef45de4bb53e8c2a8be04fd8e171ecfb28431",
+        "Created": "2026-11-10T00:54:05.158811478Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "72d641a0a2db915f19aff73111ef2a49b17dff362361c9895375ff0895a9fac4": {
+                "Name": "jg-repuestos-api-1",
+                "EndpointID": "628c495ae42aed5d194b21ae164b8bd4ef0a8cc2411f90ac94370eecebad3385",
+                "MacAddress": "12:ce:9a:47:eb:6e",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            },
+            "c0465658ccc583cbfd9d6100d9c0de248f781ad2675ba2855f871c3732e31152": {
+                "Name": "jg-repuestos-db-1",
+                "EndpointID": "554d4cdb1f73938b83d3f0ad28bb827480393a4dc511cc2d37f937b60636174f",
+                "MacAddress": "fa:c3:9a:b2:61:39",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "f1686f33d5a754be28a8566f587cec04f8a5e237744f124b9930fb674e91c748",
+            "com.docker.compose.network": "jg-network",
+            "com.docker.compose.project": "jg-repuestos",
+            "com.docker.compose.version": "2.38.2"
+        }
+    }
+]
+
+Exit code: 0

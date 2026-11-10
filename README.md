@@ -154,8 +154,10 @@ usuario con permiso para crear esquemas. Las pruebas usan Alembic, no
 El workflow `.github/workflows/docker-ci.yml` está configurado para comprobar
 build, salud, migraciones, comunicación real, persistencia, Pytest y frontend.
 Utiliza Buildx y apaga los dos servicios mediante `if: always()`. No publica imágenes.
-La ejecución aprobada en GitHub aún no se ha podido confirmar; hace falta acceso
-autenticado para comprobar el check remoto. [Matriz de pruebas](docs/pruebas.md).
+La ejecución remota por push ya está verificada: **docker y frontend aprobados**,
+32 pruebas backend y comunicación/persistencia correctas.
+[Actions aprobado](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/42731671529).
+[Matriz de pruebas](docs/pruebas.md).
 
 También puede ejecutar Pytest dentro de `api`, manteniendo los mismos dos servicios:
 
@@ -179,9 +181,10 @@ Los resultados están en `docs/entrega-1/evidencias/ejecuciones/20261109-193746/
 La API responde en http://localhost:8000/api/v1/docs.
 
 El remoto `origin` apunta a https://github.com/JesusGalvis05/Repuestos_SAS.
-La consulta remota requiere autenticación: aún no se han confirmado los commits
-publicados ni el pipeline remoto aprobado. La validación local es evidencia de
-Docker; la rúbrica también exige una ejecución real de GitHub Actions en verde.
+Se confirmó el push de `master` y la ejecución remota de GitHub Actions
+`42731671529` con resultado `success` para el commit `18aea1e`.
+Los artefactos originales saneados están en
+`docs/entrega-1/evidencias/github-actions/42731671529/`.
 
 Se validó además el archivo con Compose oficial portátil 2.39.4, sin instalar un
 motor: SHA-256 comprobado y `config --quiet` con salida 0. La configuración

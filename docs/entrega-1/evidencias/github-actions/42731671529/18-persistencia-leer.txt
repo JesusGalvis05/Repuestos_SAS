@@ -1,0 +1,4 @@
+$ docker compose exec -T api python -m app.diagnostics read --id c99b56fc-964b-406a-861f-ba3c1470c1d8
+{"status": "passed", "operation": "read", "id": "c99b56fc-964b-406a-861f-ba3c1470c1d8", "host": "db", "configured_port": 5432, "server_port": 5432, "database": "jg_repuestos", "verified": ["id", "email", "full_name", "inactive", "no_roles"]}
+
+Exit code: 0

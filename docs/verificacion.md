@@ -63,6 +63,8 @@ ALL y ausencia de puertos publicados en db se comprobaron por inspección real.
 
 El PDF actualizado incluye extractos de los logs y capturas HTTP reales de ready
 y Swagger. Evidencias: `entrega-1/evidencias/ejecuciones/20261109-193746/`.
-GitHub Actions remoto sigue pendiente: ejecutar su receta localmente no representa
-un pipeline aprobado en GitHub. Las capturas de consola y datos de portada aún
+GitHub Actions remoto quedó aprobado en la ejecución 42731671529 para el commit
+18aea1e, con docker/frontend en success y 32 pruebas backend aprobadas. Se
+descargaron los artefactos reales en `entrega-1/evidencias/github-actions/42731671529/`.
+Las capturas de consola/interfaz de Actions y datos de portada aún
 deben completarse para la entrega académica.

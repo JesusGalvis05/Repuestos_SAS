@@ -1,0 +1,4 @@
+$ docker compose exec -T api python -m app.diagnostics create
+{"status": "passed", "operation": "create", "id": "c99b56fc-964b-406a-861f-ba3c1470c1d8"}
+
+Exit code: 0
