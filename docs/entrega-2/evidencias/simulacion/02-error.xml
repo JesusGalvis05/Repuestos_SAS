@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.224" timestamp="2026-11-22T20:51:56.296390-05:00" hostname="DESKTOP-THVP81I"><testcase classname="tests.test_rules" name="test_access_contract_and_wrong_key" time="0.003"><failure message="assert (1795399316 - 1795398716) == 601">def test_access_contract_and_wrong_key():
+        user_id, session_id = uuid4(), uuid4()
+        token = issue_access(user_id, session_id, settings())
+        claims = decode_access(token, settings())
+        assert claims["sub"] == str(user_id)
+        assert claims["sid"] == str(session_id)
+&gt;       assert claims["exp"] - claims["iat"] == 601
+E       assert (1795399316 - 1795398716) == 601
+
+tests\test_rules.py:41: AssertionError</failure></testcase></testsuite></testsuites>

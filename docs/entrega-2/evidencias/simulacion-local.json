@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-11-22T20:51:58.001684-05:00",
+  "scope": "Prueba nativa de una asercion existente en worktree separado; no es Jenkins ni Actions",
+  "branch": "demo/entrega-2",
+  "initial": {
+    "command": [
+      "C:\\Jesus\\estudio\\repuestos_SAS\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_rules.py::test_access_contract_and_wrong_key",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=C:\\Jesus\\estudio\\repuestos_SAS\\docs\\entrega-2\\evidencias\\simulacion\\01-inicial.xml"
+    ],
+    "exit_code": 0,
+    "head_sha": "e54dc2a681af6ff1208fb896bbe98e8089af3497"
+  },
+  "intentional_failure": {
+    "command": [
+      "C:\\Jesus\\estudio\\repuestos_SAS\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_rules.py::test_access_contract_and_wrong_key",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=C:\\Jesus\\estudio\\repuestos_SAS\\docs\\entrega-2\\evidencias\\simulacion\\02-error.xml"
+    ],
+    "exit_code": 1,
+    "head_sha": "1296bc1f51debb512e00aa1bb767f7ce6a8aedaa"
+  },
+  "corrected": {
+    "command": [
+      "C:\\Jesus\\estudio\\repuestos_SAS\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_rules.py::test_access_contract_and_wrong_key",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=C:\\Jesus\\estudio\\repuestos_SAS\\docs\\entrega-2\\evidencias\\simulacion\\03-corregida.xml"
+    ],
+    "exit_code": 0,
+    "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e"
+  },
+  "jenkins_demonstration": "pending",
+  "github_actions_demonstration": "pending",
+  "push_performed": false
+}

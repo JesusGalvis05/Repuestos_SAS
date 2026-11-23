@@ -158,6 +158,13 @@ docker compose build
 docker compose up -d --force-recreate --wait api
 ```
 
+## Jenkins y Entrega 2
+
+Agregué Jenkins LTS con Java 21 y un pipeline de pruebas, construcción y prueba
+de humo. La configuración, los comandos y el estado de las verificaciones están
+en la [guía de la Entrega 2](docs/entrega-2/README.md).
+Jenkins utiliza el puerto local 8081 y las pruebas usan una base temporal aislada.
+
 ## GitHub Actions
 
 El pipeline está en [.github/workflows/docker-ci.yml](.github/workflows/docker-ci.yml)

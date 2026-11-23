@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-22T20:52:32.463997-05:00",
+  "native_backend": {
+    "passed": 14,
+    "skipped": 18,
+    "scope": "Las 18 pruebas PostgreSQL requieren Docker; no se consideran aprobadas"
+  },
+  "ci_guards": {
+    "passed": 12,
+    "scope": "Aislamiento por identificador, bloqueo de etapas y validacion del XML"
+  },
+  "frontend": {
+    "passed": 2,
+    "build": "passed"
+  },
+  "compose": {
+    "jenkins_config": "passed",
+    "ci_config": "passed",
+    "scope": "Validacion de Compose, sin motor Docker"
+  },
+  "image_tags": {
+    "jenkins/jenkins:2.580.2-jdk21": "manifest verified",
+    "docker:29.9.2-cli": "manifest verified"
+  },
+  "secret_check": {
+    "status": "passed",
+    "scope": "Coincidencia de secretos locales conocidos en archivos versionables actuales; no auditoria completa del historial",
+    "files_checked": 197
+  },
+  "github_actions_delivery_1": {
+    "head_sha": "fbdb11a42a76eddef9ca5fe21758db502d881fae",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/42734177364"
+  },
+  "docker_blocker": {
+    "message": "Hyper-V no puede asignar 2048 MB de RAM a DockerDesktopVM",
+    "code": "0x800705AA",
+    "source": "Registro real de Docker Desktop"
+  },
+  "pending": [
+    "Jenkins image build and startup",
+    "JCasC runtime and authenticated UI",
+    "32 backend tests in isolated Docker",
+    "runtime image build and smoke test",
+    "Jenkins success/failure/correction builds",
+    "GitHub Actions Entrega 2 failure/correction runs",
+    "Screenshots",
+    "First-delivery runtime regression check"
+  ],
+  "push_performed": false
+}
