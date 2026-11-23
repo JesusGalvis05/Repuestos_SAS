@@ -1,0 +1,19 @@
+ Container jg-ci-actions-45105227996-1-api-1  Stopping
+ Container jg-ci-actions-45105227996-1-tests  Stopping
+ Container jg-ci-actions-45105227996-1-tests  Stopped
+ Container jg-ci-actions-45105227996-1-tests  Removing
+ Container jg-ci-actions-45105227996-1-tests  Removed
+ Container jg-ci-actions-45105227996-1-api-1  Stopped
+ Container jg-ci-actions-45105227996-1-api-1  Removing
+ Container jg-ci-actions-45105227996-1-api-1  Removed
+ Container jg-ci-actions-45105227996-1-db-1  Stopping
+ Container jg-ci-actions-45105227996-1-db-1  Stopped
+ Container jg-ci-actions-45105227996-1-db-1  Removing
+ Container jg-ci-actions-45105227996-1-db-1  Removed
+ Container jg-ci-actions-45105227996-1-tests  Stopping
+ Container jg-ci-actions-45105227996-1-tests  Error while Stopping
+ Container jg-ci-actions-45105227996-1-tests  Removed
+ Network jg-ci-actions-45105227996-1_ci-network  Removing
+ Network jg-ci-actions-45105227996-1_ci-network  Removed
+
+Exit code: 0

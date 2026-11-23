@@ -1,0 +1,15 @@
+{
+  "anonymous_api_status": 403,
+  "csrf_enabled": true,
+  "user": "jenkins",
+  "privileged": false,
+  "port_bindings": [
+    {
+      "HostIp": "127.0.0.1",
+      "HostPort": "8081"
+    }
+  ],
+  "jenkins_home_volume": "jg-jenkins_jenkins_home",
+  "docker_socket": "Mounted for local academic use; grants control of the daemon",
+  "source": "Comprobaciones HTTP y docker inspect reales; variables de entorno no guardadas"
+}

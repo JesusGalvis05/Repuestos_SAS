@@ -1,0 +1,8 @@
+{
+  "stage": "cleanup",
+  "status": "passed",
+  "run_id": "jenkins-1",
+  "timestamp": "2026-11-23T03:23:06.117364+00:00",
+  "compose_exit_code": 0,
+  "image_cleanup_exit_code": 0
+}

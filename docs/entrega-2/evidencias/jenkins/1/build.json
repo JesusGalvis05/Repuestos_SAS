@@ -1,0 +1,8 @@
+{
+  "stage": "build",
+  "status": "passed",
+  "run_id": "jenkins-1",
+  "timestamp": "2026-11-23T03:22:56.829833+00:00",
+  "image": "jg-repuestos-ci:jenkins-1-runtime",
+  "image_id": "sha256:a40837ea4f7df73690b7ca0f48add1a0c5a03b54cf925e30de4a53abde29ff74"
+}

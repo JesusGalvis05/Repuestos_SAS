@@ -1,0 +1,542 @@
+Started by user admin
+Checking out git https://github.com/JesusGalvis05/Repuestos_SAS.git into /var/jenkins_home/jobs/JG-Repuestos/workspace@script/ffd36ec8267048645df955269414e74716d428608f323aa8dd460ac41c4d9953 to read Jenkinsfile
+The recommended git tool is: NONE
+using credential jg-github
+Cloning the remote Git repository
+Cloning repository https://github.com/JesusGalvis05/Repuestos_SAS.git
+ > git init /var/jenkins_home/jobs/JG-Repuestos/workspace@script/ffd36ec8267048645df955269414e74716d428608f323aa8dd460ac41c4d9953 # timeout=10
+Fetching upstream changes from https://github.com/JesusGalvis05/Repuestos_SAS.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials Lectura del repositorio JG Repuestos
+ > git fetch --tags --force --progress -- https://github.com/JesusGalvis05/Repuestos_SAS.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/JesusGalvis05/Repuestos_SAS.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision fd6806e8b51ca76d04271c08d72d5dcf302e8fb6 (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f fd6806e8b51ca76d04271c08d72d5dcf302e8fb6 # timeout=10
+Commit message: "documentacion entrega 2"
+First time build. Skipping changelog.
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/jobs/JG-Repuestos/workspace
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] timeout
+[2026-11-23T03:22:07.907Z] Timeout set to expire in 30 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pruebas automatizadas)
+[Pipeline] deleteDir
+[Pipeline] checkout
+[2026-11-23T03:22:08.031Z] The recommended git tool is: NONE
+[2026-11-23T03:22:08.032Z] using credential jg-github
+[2026-11-23T03:22:08.035Z] Cloning the remote Git repository
+[2026-11-23T03:22:08.035Z] Cloning repository https://github.com/JesusGalvis05/Repuestos_SAS.git
+[2026-11-23T03:22:08.035Z]  > git init /var/jenkins_home/jobs/JG-Repuestos/workspace # timeout=10
+[2026-11-23T03:22:08.039Z] Fetching upstream changes from https://github.com/JesusGalvis05/Repuestos_SAS.git
+[2026-11-23T03:22:08.040Z]  > git --version # timeout=10
+[2026-11-23T03:22:08.042Z]  > git --version # 'git version 2.47.3'
+[2026-11-23T03:22:08.042Z] using GIT_ASKPASS to set credentials Lectura del repositorio JG Repuestos
+[2026-11-23T03:22:08.044Z]  > git fetch --tags --force --progress -- https://github.com/JesusGalvis05/Repuestos_SAS.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-23T03:22:08.957Z]  > git config remote.origin.url https://github.com/JesusGalvis05/Repuestos_SAS.git # timeout=10
+[2026-11-23T03:22:08.959Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-23T03:22:08.962Z] Avoid second fetch
+[2026-11-23T03:22:08.963Z]  > git rev-parse origin/master^{commit} # timeout=10
+[2026-11-23T03:22:08.965Z] Checking out Revision fd6806e8b51ca76d04271c08d72d5dcf302e8fb6 (origin/master)
+[2026-11-23T03:22:08.965Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-23T03:22:08.967Z]  > git checkout -f fd6806e8b51ca76d04271c08d72d5dcf302e8fb6 # timeout=10
+[2026-11-23T03:22:08.979Z] Commit message: "documentacion entrega 2"
+[Pipeline] sh
+[2026-11-23T03:22:09.259Z] + python3 scripts/ci_pipeline.py test
+[2026-11-23T03:22:47.822Z] #1 [internal] load local bake definitions
+[2026-11-23T03:22:47.822Z] #1 reading from stdin 603B done
+[2026-11-23T03:22:47.822Z] #1 DONE 0.0s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #2 [internal] load build definition from Dockerfile
+[2026-11-23T03:22:47.822Z] #2 transferring dockerfile: 726B done
+[2026-11-23T03:22:47.822Z] #2 DONE 0.0s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+[2026-11-23T03:22:47.822Z] #3 DONE 0.7s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #4 [internal] load .dockerignore
+[2026-11-23T03:22:47.822Z] #4 transferring context: 319B done
+[2026-11-23T03:22:47.822Z] #4 DONE 0.0s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #5 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+[2026-11-23T03:22:47.822Z] #5 DONE 0.0s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #6 [internal] load build context
+[2026-11-23T03:22:47.822Z] #6 transferring context: 78.72kB 0.0s done
+[2026-11-23T03:22:47.822Z] #6 DONE 0.0s
+[2026-11-23T03:22:47.822Z] 
+[2026-11-23T03:22:47.822Z] #7 [base 2/8] WORKDIR /app
+[2026-11-23T03:22:47.823Z] #7 CACHED
+[2026-11-23T03:22:47.823Z] 
+[2026-11-23T03:22:47.823Z] #8 [base 3/8] COPY requirements.lock ./
+[2026-11-23T03:22:47.823Z] #8 DONE 0.0s
+[2026-11-23T03:22:47.823Z] 
+[2026-11-23T03:22:47.823Z] #9 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+[2026-11-23T03:22:47.823Z] #9 1.553 Collecting alembic==1.20.1 (from -r requirements.lock (line 2))
+[2026-11-23T03:22:47.823Z] #9 2.077   Downloading alembic-1.20.1-py3-none-any.whl.metadata (7.3 kB)
+[2026-11-23T03:22:47.823Z] #9 2.186 Collecting annotated-doc==0.0.5 (from -r requirements.lock (line 3))
+[2026-11-23T03:22:47.823Z] #9 2.285   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+[2026-11-23T03:22:47.823Z] #9 2.401 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 4))
+[2026-11-23T03:22:47.823Z] #9 2.501   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+[2026-11-23T03:22:47.823Z] #9 2.641 Collecting anyio==4.16.0 (from -r requirements.lock (line 5))
+[2026-11-23T03:22:47.823Z] #9 2.742   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+[2026-11-23T03:22:47.823Z] #9 2.879 Collecting argon2-cffi==25.1.0 (from -r requirements.lock (line 6))
+[2026-11-23T03:22:47.823Z] #9 2.979   Downloading argon2_cffi-25.1.0-py3-none-any.whl.metadata (4.1 kB)
+[2026-11-23T03:22:47.823Z] #9 3.102 Collecting argon2-cffi-bindings==26.1.0 (from -r requirements.lock (line 7))
+[2026-11-23T03:22:47.823Z] #9 3.202   Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+[2026-11-23T03:22:47.823Z] #9 3.577 Collecting cffi==2.1.1 (from -r requirements.lock (line 8))
+[2026-11-23T03:22:47.823Z] #9 3.676   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+[2026-11-23T03:22:47.823Z] #9 3.790 Collecting click==8.5.1 (from -r requirements.lock (line 9))
+[2026-11-23T03:22:47.823Z] #9 3.890   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+[2026-11-23T03:22:47.823Z] #9 4.001 Collecting dnspython==2.9.2 (from -r requirements.lock (line 10))
+[2026-11-23T03:22:47.823Z] #9 4.102   Downloading dnspython-2.9.2-py3-none-any.whl.metadata (5.8 kB)
+[2026-11-23T03:22:47.823Z] #9 4.214 Collecting email-validator==2.3.0 (from -r requirements.lock (line 11))
+[2026-11-23T03:22:47.823Z] #9 4.313   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+[2026-11-23T03:22:47.823Z] #9 4.499 Collecting fastapi==0.162.2 (from -r requirements.lock (line 12))
+[2026-11-23T03:22:47.823Z] #9 4.599   Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+[2026-11-23T03:22:47.823Z] #9 4.900 Collecting greenlet==3.5.6 (from -r requirements.lock (line 13))
+[2026-11-23T03:22:47.823Z] #9 4.997   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+[2026-11-23T03:22:47.823Z] #9 5.101 Collecting h11==0.16.0 (from -r requirements.lock (line 14))
+[2026-11-23T03:22:47.823Z] #9 5.200   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+[2026-11-23T03:22:47.823Z] #9 5.336 Collecting httptools==0.9.0 (from -r requirements.lock (line 15))
+[2026-11-23T03:22:47.823Z] #9 5.436   Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+[2026-11-23T03:22:47.823Z] #9 5.546 Collecting idna==3.20 (from -r requirements.lock (line 16))
+[2026-11-23T03:22:47.823Z] #9 5.645   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+[2026-11-23T03:22:47.823Z] #9 5.754 Collecting mako==1.4.3 (from -r requirements.lock (line 17))
+[2026-11-23T03:22:47.823Z] #9 5.854   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+[2026-11-23T03:22:47.823Z] #9 5.988 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 18))
+[2026-11-23T03:22:47.823Z] #9 6.088   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+[2026-11-23T03:22:47.823Z] #9 6.207 Collecting opentelemetry-api==1.45.2 (from -r requirements.lock (line 19))
+[2026-11-23T03:22:47.823Z] #9 6.310   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+[2026-11-23T03:22:47.823Z] #9 6.428 Collecting psycopg==3.3.8 (from -r requirements.lock (line 20))
+[2026-11-23T03:22:47.823Z] #9 6.531   Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+[2026-11-23T03:22:47.823Z] #9 6.743 Collecting psycopg-binary==3.3.8 (from -r requirements.lock (line 21))
+[2026-11-23T03:22:47.823Z] #9 6.843   Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+[2026-11-23T03:22:47.823Z] #9 7.096 Collecting pwdlib==0.3.1 (from -r requirements.lock (line 22))
+[2026-11-23T03:22:47.823Z] #9 7.196   Downloading pwdlib-0.3.1-py3-none-any.whl.metadata (5.6 kB)
+[2026-11-23T03:22:47.823Z] #9 7.307 Collecting pycparser==3.12 (from -r requirements.lock (line 23))
+[2026-11-23T03:22:47.823Z] #9 7.407   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+[2026-11-23T03:22:47.823Z] #9 7.575 Collecting pydantic==2.14.3 (from -r requirements.lock (line 24))
+[2026-11-23T03:22:47.823Z] #9 7.673   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+[2026-11-23T03:22:47.823Z] #9 8.447 Collecting pydantic-core==2.50.4 (from -r requirements.lock (line 25))
+[2026-11-23T03:22:47.823Z] #9 8.545   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+[2026-11-23T03:22:47.823Z] #9 8.653 Collecting pydantic-settings==2.16.2 (from -r requirements.lock (line 26))
+[2026-11-23T03:22:47.823Z] #9 8.755   Downloading pydantic_settings-2.16.2-py3-none-any.whl.metadata (4.0 kB)
+[2026-11-23T03:22:47.823Z] #9 8.867 Collecting pyjwt==2.15.1 (from -r requirements.lock (line 27))
+[2026-11-23T03:22:47.823Z] #9 8.969   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+[2026-11-23T03:22:47.823Z] #9 9.084 Collecting python-dotenv==1.2.4 (from -r requirements.lock (line 28))
+[2026-11-23T03:22:47.823Z] #9 9.186   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+[2026-11-23T03:22:47.823Z] #9 9.322 Collecting pyyaml==6.0.3 (from -r requirements.lock (line 29))
+[2026-11-23T03:22:47.823Z] #9 9.422   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+[2026-11-23T03:22:47.824Z] #9 9.758 Collecting sqlalchemy==2.0.57 (from -r requirements.lock (line 30))
+[2026-11-23T03:22:47.824Z] #9 9.862   Downloading sqlalchemy-2.0.57-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.6 kB)
+[2026-11-23T03:22:47.824Z] #9 9.993 Collecting starlette==1.10.0 (from -r requirements.lock (line 31))
+[2026-11-23T03:22:47.824Z] #9 10.09   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+[2026-11-23T03:22:47.824Z] #9 10.20 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 32))
+[2026-11-23T03:22:47.824Z] #9 10.30   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+[2026-11-23T03:22:47.824Z] #9 10.41 Collecting typing-inspection==0.4.5 (from -r requirements.lock (line 33))
+[2026-11-23T03:22:47.824Z] #9 10.51   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+[2026-11-23T03:22:47.824Z] #9 10.62 Collecting tzdata==2026.6 (from -r requirements.lock (line 34))
+[2026-11-23T03:22:47.824Z] #9 10.72   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+[2026-11-23T03:22:47.824Z] #9 10.83 Collecting uvicorn==0.54.0 (from -r requirements.lock (line 35))
+[2026-11-23T03:22:47.824Z] #9 10.93   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+[2026-11-23T03:22:47.824Z] #9 11.09 Collecting watchfiles==1.3.0 (from -r requirements.lock (line 36))
+[2026-11-23T03:22:47.824Z] #9 11.18   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+[2026-11-23T03:22:47.824Z] #9 11.38 Collecting websockets==17.4 (from -r requirements.lock (line 37))
+[2026-11-23T03:22:47.824Z] #9 11.48   Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+[2026-11-23T03:22:47.824Z] #9 11.67 Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+[2026-11-23T03:22:47.824Z] #9 11.88 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+[2026-11-23T03:22:47.824Z] #9 11.98 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+[2026-11-23T03:22:47.824Z] #9 12.08 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+[2026-11-23T03:22:47.824Z] #9 12.20 Downloading argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+[2026-11-23T03:22:47.824Z] #9 12.30 Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (26 kB)
+[2026-11-23T03:22:47.824Z] #9 12.40 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+[2026-11-23T03:22:47.824Z] #9 12.52 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+[2026-11-23T03:22:47.824Z] #9 12.63 Downloading dnspython-2.9.2-py3-none-any.whl (360 kB)
+[2026-11-23T03:22:47.824Z] #9 12.77 Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+[2026-11-23T03:22:47.824Z] #9 12.88 Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+[2026-11-23T03:22:47.824Z] #9 12.99 Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+[2026-11-23T03:22:47.824Z] #9 13.13    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 3.5 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 13.23 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+[2026-11-23T03:22:47.824Z] #9 13.33 Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (552 kB)
+[2026-11-23T03:22:47.824Z] #9 13.44    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.8/552.8 kB 3.6 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 13.54 Downloading idna-3.20-py3-none-any.whl (69 kB)
+[2026-11-23T03:22:47.824Z] #9 13.65 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+[2026-11-23T03:22:47.824Z] #9 13.75 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+[2026-11-23T03:22:47.824Z] #9 13.86 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+[2026-11-23T03:22:47.824Z] #9 13.96 Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+[2026-11-23T03:22:47.824Z] #9 14.08 Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+[2026-11-23T03:22:47.824Z] #9 14.67    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 8.7 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 14.78 Downloading pwdlib-0.3.1-py3-none-any.whl (9.3 kB)
+[2026-11-23T03:22:47.824Z] #9 14.89 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+[2026-11-23T03:22:47.824Z] #9 14.99 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+[2026-11-23T03:22:47.824Z] #9 15.13 Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+[2026-11-23T03:22:47.824Z] #9 15.34    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 11.1 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 15.44 Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+[2026-11-23T03:22:47.824Z] #9 15.55 Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+[2026-11-23T03:22:47.824Z] #9 15.66 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+[2026-11-23T03:22:47.824Z] #9 15.77 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+[2026-11-23T03:22:47.824Z] #9 15.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 15.2 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 15.94 Downloading sqlalchemy-2.0.57-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.5 MB)
+[2026-11-23T03:22:47.824Z] #9 16.24    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 11.6 MB/s eta 0:00:00
+[2026-11-23T03:22:47.824Z] #9 16.34 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+[2026-11-23T03:22:47.824Z] #9 16.45 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+[2026-11-23T03:22:47.824Z] #9 16.56 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+[2026-11-23T03:22:47.824Z] #9 16.66 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+[2026-11-23T03:22:47.824Z] #9 16.79 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+[2026-11-23T03:22:47.824Z] #9 16.90 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+[2026-11-23T03:22:47.824Z] #9 17.03 Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+[2026-11-23T03:22:47.824Z] #9 17.13 Installing collected packages: websockets, tzdata, typing-extensions, pyyaml, python-dotenv, pyjwt, pycparser, pwdlib, psycopg-binary, markupsafe, idna, httptools, h11, greenlet, dnspython, click, annotated-types, annotated-doc, uvicorn, typing-inspection, sqlalchemy, pydantic-core, psycopg, opentelemetry-api, mako, email-validator, cffi, anyio, watchfiles, starlette, pydantic, argon2-cffi-bindings, alembic, pydantic-settings, fastapi, argon2-cffi
+[2026-11-23T03:22:47.824Z] #9 19.49 Successfully installed alembic-1.20.1 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 argon2-cffi-25.1.0 argon2-cffi-bindings-26.1.0 cffi-2.1.1 click-8.5.1 dnspython-2.9.2 email-validator-2.3.0 fastapi-0.162.2 greenlet-3.5.6 h11-0.16.0 httptools-0.9.0 idna-3.20 mako-1.4.3 markupsafe-3.0.4 opentelemetry-api-1.45.2 psycopg-3.3.8 psycopg-binary-3.3.8 pwdlib-0.3.1 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 pyjwt-2.15.1 python-dotenv-1.2.4 pyyaml-6.0.3 sqlalchemy-2.0.57 starlette-1.10.0 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 uvicorn-0.54.0 watchfiles-1.3.0 websockets-17.4
+[2026-11-23T03:22:47.824Z] #9 19.49 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[2026-11-23T03:22:47.824Z] #9 DONE 19.6s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #10 [base 5/8] COPY app ./app
+[2026-11-23T03:22:47.824Z] #10 DONE 0.0s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #11 [base 6/8] COPY migrations ./migrations
+[2026-11-23T03:22:47.824Z] #11 DONE 0.0s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #12 [base 7/8] COPY alembic.ini ./
+[2026-11-23T03:22:47.824Z] #12 DONE 0.0s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+[2026-11-23T03:22:47.824Z] #13 DONE 0.1s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #14 [test 1/4] COPY requirements-dev.lock ./
+[2026-11-23T03:22:47.824Z] #14 DONE 0.0s
+[2026-11-23T03:22:47.824Z] 
+[2026-11-23T03:22:47.824Z] #15 [test 2/4] RUN pip install --no-cache-dir -r requirements-dev.lock
+[2026-11-23T03:22:47.824Z] #15 1.168 Ignoring pywin32: markers 'sys_platform == "win32"' don't match your environment
+[2026-11-23T03:22:47.824Z] #15 1.169 Requirement already satisfied: alembic==1.20.1 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 2)) (1.20.1)
+[2026-11-23T03:22:47.824Z] #15 1.170 Requirement already satisfied: annotated-doc==0.0.5 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 3)) (0.0.5)
+[2026-11-23T03:22:47.824Z] #15 1.170 Requirement already satisfied: annotated-types==0.8.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 4)) (0.8.0)
+[2026-11-23T03:22:47.824Z] #15 1.171 Requirement already satisfied: anyio==4.16.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 5)) (4.16.0)
+[2026-11-23T03:22:47.824Z] #15 1.172 Requirement already satisfied: argon2-cffi==25.1.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 6)) (25.1.0)
+[2026-11-23T03:22:47.824Z] #15 1.172 Requirement already satisfied: argon2-cffi-bindings==26.1.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 7)) (26.1.0)
+[2026-11-23T03:22:47.824Z] #15 1.173 Requirement already satisfied: cffi==2.1.1 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 8)) (2.1.1)
+[2026-11-23T03:22:47.824Z] #15 1.174 Requirement already satisfied: click==8.5.1 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 9)) (8.5.1)
+[2026-11-23T03:22:47.824Z] #15 1.174 Requirement already satisfied: dnspython==2.9.2 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 10)) (2.9.2)
+[2026-11-23T03:22:47.824Z] #15 1.175 Requirement already satisfied: email-validator==2.3.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 11)) (2.3.0)
+[2026-11-23T03:22:47.824Z] #15 1.175 Requirement already satisfied: fastapi==0.162.2 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 12)) (0.162.2)
+[2026-11-23T03:22:47.824Z] #15 1.175 Requirement already satisfied: greenlet==3.5.6 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 13)) (3.5.6)
+[2026-11-23T03:22:47.824Z] #15 1.176 Requirement already satisfied: h11==0.16.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 14)) (0.16.0)
+[2026-11-23T03:22:47.824Z] #15 1.176 Requirement already satisfied: httptools==0.9.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 15)) (0.9.0)
+[2026-11-23T03:22:47.824Z] #15 1.176 Requirement already satisfied: idna==3.20 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 16)) (3.20)
+[2026-11-23T03:22:47.824Z] #15 1.178 Requirement already satisfied: mako==1.4.3 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 17)) (1.4.3)
+[2026-11-23T03:22:47.824Z] #15 1.178 Requirement already satisfied: markupsafe==3.0.4 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 18)) (3.0.4)
+[2026-11-23T03:22:47.824Z] #15 1.178 Requirement already satisfied: opentelemetry-api==1.45.2 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 19)) (1.45.2)
+[2026-11-23T03:22:47.824Z] #15 1.178 Requirement already satisfied: psycopg==3.3.8 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 20)) (3.3.8)
+[2026-11-23T03:22:47.824Z] #15 1.178 Requirement already satisfied: psycopg-binary==3.3.8 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 21)) (3.3.8)
+[2026-11-23T03:22:47.825Z] #15 1.178 Requirement already satisfied: pwdlib==0.3.1 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 22)) (0.3.1)
+[2026-11-23T03:22:47.825Z] #15 1.178 Requirement already satisfied: pycparser==3.12 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 23)) (3.12)
+[2026-11-23T03:22:47.825Z] #15 1.179 Requirement already satisfied: pydantic==2.14.3 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 24)) (2.14.3)
+[2026-11-23T03:22:47.825Z] #15 1.179 Requirement already satisfied: pydantic-core==2.50.4 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 25)) (2.50.4)
+[2026-11-23T03:22:47.825Z] #15 1.179 Requirement already satisfied: pydantic-settings==2.16.2 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 26)) (2.16.2)
+[2026-11-23T03:22:47.825Z] #15 1.179 Requirement already satisfied: pyjwt==2.15.1 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 27)) (2.15.1)
+[2026-11-23T03:22:47.825Z] #15 1.179 Requirement already satisfied: python-dotenv==1.2.4 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 28)) (1.2.4)
+[2026-11-23T03:22:47.825Z] #15 1.180 Requirement already satisfied: pyyaml==6.0.3 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 29)) (6.0.3)
+[2026-11-23T03:22:47.825Z] #15 1.180 Requirement already satisfied: sqlalchemy==2.0.57 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 30)) (2.0.57)
+[2026-11-23T03:22:47.825Z] #15 1.180 Requirement already satisfied: starlette==1.10.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 31)) (1.10.0)
+[2026-11-23T03:22:47.825Z] #15 1.180 Requirement already satisfied: typing-extensions==4.16.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 32)) (4.16.0)
+[2026-11-23T03:22:47.825Z] #15 1.181 Requirement already satisfied: typing-inspection==0.4.5 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 33)) (0.4.5)
+[2026-11-23T03:22:47.825Z] #15 1.184 Requirement already satisfied: tzdata==2026.6 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 34)) (2026.6)
+[2026-11-23T03:22:47.825Z] #15 1.184 Requirement already satisfied: uvicorn==0.54.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 35)) (0.54.0)
+[2026-11-23T03:22:47.825Z] #15 1.184 Requirement already satisfied: watchfiles==1.3.0 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 36)) (1.3.0)
+[2026-11-23T03:22:47.825Z] #15 1.184 Requirement already satisfied: websockets==17.4 in /usr/local/lib/python3.12/site-packages (from -r /app/requirements.lock (line 37)) (17.4)
+[2026-11-23T03:22:47.825Z] #15 1.580 Collecting certifi==2026.10.23 (from -r requirements-dev.lock (line 2))
+[2026-11-23T03:22:47.825Z] #15 2.069   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+[2026-11-23T03:22:47.825Z] #15 2.541 Collecting charset-normalizer==3.5.2 (from -r requirements-dev.lock (line 3))
+[2026-11-23T03:22:47.825Z] #15 2.703   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+[2026-11-23T03:22:47.825Z] #15 2.975 Collecting colorama==0.4.6 (from -r requirements-dev.lock (line 4))
+[2026-11-23T03:22:47.825Z] #15 3.127   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+[2026-11-23T03:22:47.825Z] #15 3.263 Collecting docker==7.2.0 (from -r requirements-dev.lock (line 5))
+[2026-11-23T03:22:47.825Z] #15 3.419   Downloading docker-7.2.0-py3-none-any.whl.metadata (3.8 kB)
+[2026-11-23T03:22:47.825Z] #15 3.552 Collecting httpcore==1.0.9 (from -r requirements-dev.lock (line 6))
+[2026-11-23T03:22:47.825Z] #15 3.706   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+[2026-11-23T03:22:47.825Z] #15 3.855 Collecting httpx==0.28.1 (from -r requirements-dev.lock (line 7))
+[2026-11-23T03:22:47.825Z] #15 4.012   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+[2026-11-23T03:22:47.825Z] #15 4.147 Collecting iniconfig==2.3.1 (from -r requirements-dev.lock (line 8))
+[2026-11-23T03:22:47.825Z] #15 4.301   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+[2026-11-23T03:22:47.825Z] #15 4.419 Collecting packaging==26.3 (from -r requirements-dev.lock (line 9))
+[2026-11-23T03:22:47.825Z] #15 4.572   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+[2026-11-23T03:22:47.825Z] #15 4.697 Collecting pluggy==1.7.0 (from -r requirements-dev.lock (line 10))
+[2026-11-23T03:22:47.825Z] #15 4.853   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+[2026-11-23T03:22:47.825Z] #15 4.983 Collecting pygments==2.21.0 (from -r requirements-dev.lock (line 11))
+[2026-11-23T03:22:47.825Z] #15 5.141   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+[2026-11-23T03:22:47.825Z] #15 5.278 Collecting pytest==9.2.0 (from -r requirements-dev.lock (line 12))
+[2026-11-23T03:22:47.825Z] #15 5.437   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+[2026-11-23T03:22:47.825Z] #15 5.576 Collecting requests==2.34.2 (from -r requirements-dev.lock (line 14))
+[2026-11-23T03:22:47.825Z] #15 5.729   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+[2026-11-23T03:22:47.825Z] #15 6.175 Collecting ruff==0.17.4 (from -r requirements-dev.lock (line 15))
+[2026-11-23T03:22:47.825Z] #15 6.473   Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+[2026-11-23T03:22:47.825Z] #15 6.609 Collecting testcontainers==4.15.0 (from -r requirements-dev.lock (line 16))
+[2026-11-23T03:22:47.825Z] #15 6.763   Downloading testcontainers-4.15.0-py3-none-any.whl.metadata (8.9 kB)
+[2026-11-23T03:22:47.825Z] #15 6.898 Collecting urllib3==2.8.0 (from -r requirements-dev.lock (line 17))
+[2026-11-23T03:22:47.825Z] #15 7.055   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+[2026-11-23T03:22:47.825Z] #15 7.402 Collecting wrapt==2.5.2 (from -r requirements-dev.lock (line 18))
+[2026-11-23T03:22:47.825Z] #15 7.557   Downloading wrapt-2.5.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.6 kB)
+[2026-11-23T03:22:47.825Z] #15 7.812 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+[2026-11-23T03:22:47.825Z] #15 8.160 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+[2026-11-23T03:22:47.825Z] #15 8.497 Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+[2026-11-23T03:22:47.825Z] #15 8.656 Downloading docker-7.2.0-py3-none-any.whl (148 kB)
+[2026-11-23T03:22:47.825Z] #15 8.828 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+[2026-11-23T03:22:47.825Z] #15 8.993 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+[2026-11-23T03:22:47.825Z] #15 9.158 Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+[2026-11-23T03:22:47.825Z] #15 9.313 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+[2026-11-23T03:22:47.825Z] #15 9.485 Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+[2026-11-23T03:22:47.825Z] #15 9.651 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+[2026-11-23T03:22:47.825Z] #15 9.914    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 4.6 MB/s eta 0:00:00
+[2026-11-23T03:22:47.825Z] #15 10.07 Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+[2026-11-23T03:22:47.825Z] #15 10.26 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+[2026-11-23T03:22:47.825Z] #15 10.42 Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.6 MB)
+[2026-11-23T03:22:47.825Z] #15 11.72    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.6/10.6 MB 8.1 MB/s eta 0:00:00
+[2026-11-23T03:22:47.825Z] #15 11.88 Downloading testcontainers-4.15.0-py3-none-any.whl (160 kB)
+[2026-11-23T03:22:47.825Z] #15 12.05 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+[2026-11-23T03:22:47.825Z] #15 12.22 Downloading wrapt-2.5.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (250 kB)
+[2026-11-23T03:22:47.825Z] #15 12.29 Installing collected packages: wrapt, urllib3, ruff, pygments, pluggy, packaging, iniconfig, colorama, charset-normalizer, certifi, requests, pytest, httpcore, httpx, docker, testcontainers
+[2026-11-23T03:22:47.825Z] #15 13.48 Successfully installed certifi-2026.10.23 charset-normalizer-3.5.2 colorama-0.4.6 docker-7.2.0 httpcore-1.0.9 httpx-0.28.1 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.2.0 requests-2.34.2 ruff-0.17.4 testcontainers-4.15.0 urllib3-2.8.0 wrapt-2.5.2
+[2026-11-23T03:22:47.825Z] #15 13.48 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[2026-11-23T03:22:47.825Z] #15 DONE 13.6s
+[2026-11-23T03:22:47.825Z] 
+[2026-11-23T03:22:47.825Z] #16 [test 3/4] COPY tests ./tests
+[2026-11-23T03:22:47.825Z] #16 DONE 0.0s
+[2026-11-23T03:22:47.825Z] 
+[2026-11-23T03:22:47.825Z] #17 [test 4/4] COPY pyproject.toml ./
+[2026-11-23T03:22:47.825Z] #17 DONE 0.0s
+[2026-11-23T03:22:47.825Z] 
+[2026-11-23T03:22:47.825Z] #18 exporting to image
+[2026-11-23T03:22:47.825Z] #18 exporting layers
+[2026-11-23T03:22:47.825Z] #18 exporting layers 0.6s done
+[2026-11-23T03:22:47.825Z] #18 writing image sha256:46cffd6771bfcc42a1e843192e3432ba93174d9baf188b567b7c2fcbb103fff3 done
+[2026-11-23T03:22:47.825Z] #18 naming to docker.io/library/jg-repuestos-ci:jenkins-1-test done
+[2026-11-23T03:22:47.825Z] #18 DONE 0.7s
+[2026-11-23T03:22:47.825Z] 
+[2026-11-23T03:22:47.825Z] #19 resolving provenance for metadata file
+[2026-11-23T03:22:47.825Z] #19 DONE 0.0s
+[2026-11-23T03:22:47.825Z]  Image jg-repuestos-ci:jenkins-1-test Building 
+[2026-11-23T03:22:47.825Z]  Image jg-repuestos-ci:jenkins-1-test Built 
+[2026-11-23T03:22:47.825Z]  Network jg-ci-jenkins-1_ci-network Creating 
+[2026-11-23T03:22:47.825Z]  Network jg-ci-jenkins-1_ci-network Creating 
+[2026-11-23T03:22:47.825Z]  Network jg-ci-jenkins-1_ci-network Created 
+[2026-11-23T03:22:47.825Z]  Network jg-ci-jenkins-1_ci-network Created 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Creating 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Created 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Starting 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Started 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Waiting 
+[2026-11-23T03:22:47.825Z]  Container jg-ci-jenkins-1-db-1 Healthy 
+[2026-11-23T03:22:55.858Z] ................................                                         [100%]
+[2026-11-23T03:22:55.858Z] =============================== warnings summary ===============================
+[2026-11-23T03:22:55.858Z] ../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+[2026-11-23T03:22:55.858Z]   /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+[2026-11-23T03:22:55.858Z]     from starlette.testclient import TestClient as TestClient  # noqa
+[2026-11-23T03:22:55.858Z] 
+[2026-11-23T03:22:55.858Z] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[2026-11-23T03:22:55.858Z] 32 passed, 1 warning in 5.10s
+[2026-11-23T03:22:55.858Z]  Container jg-ci-jenkins-1-tests Creating 
+[2026-11-23T03:22:55.858Z]  Container jg-ci-jenkins-1-tests Created 
+[2026-11-23T03:22:55.858Z] INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+[2026-11-23T03:22:55.858Z] INFO  [alembic.runtime.migration] Will assume transactional DDL.
+[2026-11-23T03:22:55.859Z] INFO  [alembic.runtime.migration] Running upgrade  -> 0001_identity, Seguridad, sesiones, RBAC y auditoría; sin usuarios ni credenciales iniciales.
+Post stage
+[Pipeline] junit
+[2026-11-23T03:22:55.927Z] Recording test results
+[2026-11-23T03:22:56.021Z] [Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Construccion de imagen)
+[Pipeline] sh
+[2026-11-23T03:22:56.350Z] + python3 scripts/ci_pipeline.py build
+[2026-11-23T03:22:56.902Z] #1 [internal] load local bake definitions
+[2026-11-23T03:22:56.902Z] #1 reading from stdin 603B done
+[2026-11-23T03:22:56.902Z] #1 DONE 0.0s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #2 [internal] load build definition from Dockerfile
+[2026-11-23T03:22:56.902Z] #2 transferring dockerfile: 726B done
+[2026-11-23T03:22:56.902Z] #2 DONE 0.0s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+[2026-11-23T03:22:56.902Z] #3 DONE 0.4s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #4 [internal] load .dockerignore
+[2026-11-23T03:22:56.902Z] #4 transferring context: 319B done
+[2026-11-23T03:22:56.902Z] #4 DONE 0.0s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #5 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+[2026-11-23T03:22:56.902Z] #5 DONE 0.0s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #6 [internal] load build context
+[2026-11-23T03:22:56.902Z] #6 transferring context: 1.38kB done
+[2026-11-23T03:22:56.902Z] #6 DONE 0.0s
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #7 [base 2/8] WORKDIR /app
+[2026-11-23T03:22:56.902Z] #7 CACHED
+[2026-11-23T03:22:56.902Z] 
+[2026-11-23T03:22:56.902Z] #8 [base 3/8] COPY requirements.lock ./
+[2026-11-23T03:22:56.903Z] #8 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #9 [base 5/8] COPY app ./app
+[2026-11-23T03:22:56.903Z] #9 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #10 [base 7/8] COPY alembic.ini ./
+[2026-11-23T03:22:56.903Z] #10 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #11 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+[2026-11-23T03:22:56.903Z] #11 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #12 [base 6/8] COPY migrations ./migrations
+[2026-11-23T03:22:56.903Z] #12 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+[2026-11-23T03:22:56.903Z] #13 CACHED
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #14 exporting to image
+[2026-11-23T03:22:56.903Z] #14 exporting layers done
+[2026-11-23T03:22:56.903Z] #14 writing image sha256:a40837ea4f7df73690b7ca0f48add1a0c5a03b54cf925e30de4a53abde29ff74 done
+[2026-11-23T03:22:56.903Z] #14 naming to docker.io/library/jg-repuestos-ci:jenkins-1-runtime done
+[2026-11-23T03:22:56.903Z] #14 DONE 0.0s
+[2026-11-23T03:22:56.903Z] 
+[2026-11-23T03:22:56.903Z] #15 resolving provenance for metadata file
+[2026-11-23T03:22:56.903Z] #15 DONE 0.0s
+[2026-11-23T03:22:56.903Z]  Image jg-repuestos-ci:jenkins-1-runtime Building 
+[2026-11-23T03:22:56.903Z]  Image jg-repuestos-ci:jenkins-1-runtime Built 
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Prueba de humo)
+[Pipeline] sh
+[2026-11-23T03:22:57.215Z] + python3 scripts/ci_pipeline.py smoke
+[2026-11-23T03:23:03.698Z] time="2026-11-23T03:22:57Z" level=warning msg="Found orphan containers (jg-ci-jenkins-1-tests) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-db-1 Running 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Creating 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Created 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-db-1 Waiting 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-db-1 Healthy 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Starting 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Started 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Waiting 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-db-1 Waiting 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-db-1 Healthy 
+[2026-11-23T03:23:03.698Z]  Container jg-ci-jenkins-1-api-1 Healthy 
+[2026-11-23T03:23:03.698Z] {"health": {"status": "ok", "service": "jg-repuestos", "phase": 1}, "ready": {"status": "ready"}}
+[2026-11-23T03:23:05.042Z] {"status": "passed", "operation": "write-read-cleanup", "id": "03b71e26-e729-4fc6-962f-74a87ad939f7", "host": "db", "configured_port": 5432, "server_port": 5432, "database": "jg_ci", "verified": ["id", "email", "full_name", "inactive", "no_roles"], "cleanup": "passed"}
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-11-23T03:23:05.428Z] + python3 scripts/ci_pipeline.py cleanup
+[2026-11-23T03:23:05.428Z] api-1  | INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+[2026-11-23T03:23:05.429Z] api-1  | INFO  [alembic.runtime.migration] Will assume transactional DDL.
+[2026-11-23T03:23:05.429Z] api-1  | INFO:     Started server process [1]
+[2026-11-23T03:23:05.429Z] api-1  | INFO:     Waiting for application startup.
+[2026-11-23T03:23:05.429Z] api-1  | INFO:     Application startup complete.
+[2026-11-23T03:23:05.429Z] api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2026-11-23T03:23:05.429Z] db-1   | The files belonging to this database system will be owned by user "postgres".
+[2026-11-23T03:23:05.429Z] db-1   | This user must also own the server process.
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | The database cluster will be initialized with locale "en_US.utf8".
+[2026-11-23T03:23:05.429Z] db-1   | The default database encoding has accordingly been set to "UTF8".
+[2026-11-23T03:23:05.429Z] db-1   | The default text search configuration will be set to "english".
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | Data page checksums are disabled.
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[2026-11-23T03:23:05.429Z] db-1   | creating subdirectories ... ok
+[2026-11-23T03:23:05.429Z] db-1   | selecting dynamic shared memory implementation ... posix
+[2026-11-23T03:23:05.429Z] db-1   | selecting default "max_connections" ... 100
+[2026-11-23T03:23:05.429Z] db-1   | selecting default "shared_buffers" ... 128MB
+[2026-11-23T03:23:05.429Z] db-1   | selecting default time zone ... Etc/UTC
+[2026-11-23T03:23:05.429Z] db-1   | creating configuration files ... ok
+[2026-11-23T03:23:05.429Z] db-1   | running bootstrap script ... ok
+[2026-11-23T03:23:05.429Z] db-1   | performing post-bootstrap initialization ... ok
+[2026-11-23T03:23:05.429Z] db-1   | syncing data to disk ... ok
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | Success. You can now start the database server using:
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | initdb: warning: enabling "trust" authentication for local connections
+[2026-11-23T03:23:05.429Z] db-1   | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+[2026-11-23T03:23:05.429Z] db-1   | waiting for server to start....2026-11-23 03:22:44.743 UTC [49] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.745 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.747 UTC [52] LOG:  database system was shut down at 2026-11-23 03:22:44 UTC
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.748 UTC [49] LOG:  database system is ready to accept connections
+[2026-11-23T03:23:05.429Z] db-1   |  done
+[2026-11-23T03:23:05.429Z] db-1   | server started
+[2026-11-23T03:23:05.429Z] db-1   | CREATE DATABASE
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | waiting for server to shut down....2026-11-23 03:22:44.897 UTC [49] LOG:  received fast shutdown request
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.897 UTC [49] LOG:  aborting any active transactions
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.898 UTC [49] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.899 UTC [50] LOG:  shutting down
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.899 UTC [50] LOG:  checkpoint starting: shutdown immediate
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.902 UTC [50] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.004 s; sync files=301, longest=0.001 s, average=0.000 s; distance=4238 kB, estimate=4238 kB; lsn=0/190A9B8, redo lsn=0/190A9B8
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:44.905 UTC [49] LOG:  database system is shut down
+[2026-11-23T03:23:05.429Z] db-1   |  done
+[2026-11-23T03:23:05.429Z] db-1   | server stopped
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | PostgreSQL init process complete; ready for start up.
+[2026-11-23T03:23:05.429Z] db-1   | 
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.015 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.015 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.015 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.017 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.018 UTC [65] LOG:  database system was shut down at 2026-11-23 03:22:44 UTC
+[2026-11-23T03:23:05.429Z] db-1   | 2026-11-23 03:22:45.020 UTC [1] LOG:  database system is ready to accept connections
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-api-1 Stopping 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Stopping 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Stopped 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Removing 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Removed 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-api-1 Stopped 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-api-1 Removing 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-api-1 Removed 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-db-1 Stopping 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-db-1 Stopped 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-db-1 Removing 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-db-1 Removed 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Stopping 
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Error Error while Stopping
+[2026-11-23T03:23:06.341Z]  Container jg-ci-jenkins-1-tests Removed 
+[2026-11-23T03:23:06.341Z]  Network jg-ci-jenkins-1_ci-network Removing 
+[2026-11-23T03:23:06.341Z]  Network jg-ci-jenkins-1_ci-network Removed 
+[2026-11-23T03:23:06.341Z] Untagged: jg-repuestos-ci:jenkins-1-test
+[2026-11-23T03:23:06.341Z] Deleted: sha256:46cffd6771bfcc42a1e843192e3432ba93174d9baf188b567b7c2fcbb103fff3
+[2026-11-23T03:23:06.341Z] Untagged: jg-repuestos-ci:jenkins-1-runtime
+[2026-11-23T03:23:06.341Z] Deleted: sha256:a40837ea4f7df73690b7ca0f48add1a0c5a03b54cf925e30de4a53abde29ff74
+[Pipeline] archiveArtifacts
+[2026-11-23T03:23:06.387Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

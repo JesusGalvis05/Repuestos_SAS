@@ -1,0 +1,10 @@
+{
+  "stage": "smoke",
+  "status": "passed",
+  "run_id": "jenkins-1",
+  "timestamp": "2026-11-23T03:23:04.842861+00:00",
+  "endpoints": [
+    "/api/v1/health",
+    "/api/v1/ready"
+  ]
+}

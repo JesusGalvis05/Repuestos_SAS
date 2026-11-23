@@ -1,0 +1,60 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 461B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 726B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 319B done
+#4 DONE 0.0s
+
+#5 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.38kB done
+#6 DONE 0.0s
+
+#7 [base 5/8] COPY app ./app
+#7 CACHED
+
+#8 [base 7/8] COPY alembic.ini ./
+#8 CACHED
+
+#9 [base 2/8] WORKDIR /app
+#9 CACHED
+
+#10 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+#10 CACHED
+
+#11 [base 6/8] COPY migrations ./migrations
+#11 CACHED
+
+#12 [base 3/8] COPY requirements.lock ./
+#12 CACHED
+
+#13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+#13 CACHED
+
+#14 exporting to docker image format
+#14 exporting layers done
+#14 exporting manifest sha256:8dc0ee526af2e41fc2bf97b531b18d0566dd3b4745cda8ecb75a61f8b797d4dc done
+#14 exporting config sha256:2df1bae2a92278d56b44b7a19e2432a20d6ffc4650f036128b58110488932b7e done
+#14 sending tarball
+#14 sending tarball 0.3s done
+#14 DONE 0.3s
+
+#15 importing to docker
+#15 DONE 0.0s
+
+#16 resolving provenance for metadata file
+#16 DONE 0.0s
+ api  Built
+
+Exit code: 0

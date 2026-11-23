@@ -1,0 +1,7 @@
+{
+  "stage": "test",
+  "status": "failed",
+  "run_id": "jenkins-2",
+  "timestamp": "2026-11-23T03:29:16.569965+00:00",
+  "error": "RuntimeError"
+}

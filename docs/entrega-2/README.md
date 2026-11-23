@@ -6,6 +6,28 @@ pipeline de tres etapas. El workflow de la primera entrega se conserva.
 
 Repositorio: https://github.com/JesusGalvis05/Repuestos_SAS
 
+## Resultados comprobados
+
+El 22 de noviembre de 2026 inicié Jenkins desde Docker y ejecuté el trabajo
+`JG-Repuestos` desde GitHub. El [build 1](http://localhost:8081/job/JG-Repuestos/1/)
+aprobó las tres etapas: 32 pruebas sin fallos ni omisiones, imagen runtime y prueba
+de humo. Los contenedores temporales se limpiaron al finalizar.
+
+También aprobaron [CI - Entrega 2](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45105227996)
+y [Docker - Entrega 1](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45105228059)
+para el commit `fd6806e`. La API de desarrollo conserva sus dos contenedores
+saludables; `health`, `ready` y escritura/lectura en PostgreSQL respondieron bien.
+
+En el primer arranque corregí una propiedad antigua de CSRF en JCasC. Jenkins
+2.580.2 utiliza `crumbIssuer: { standard: {} }`; CSRF sigue activo. La corrección
+está en el commit local `112342b` y aún no se ha publicado.
+
+Después de autorizar la rama, [Jenkins 2](http://localhost:8081/job/JG-Repuestos/2/)
+y [Actions 45106218087](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45106218087)
+detectaron el error: 31 pruebas aprobadas y una fallida. Construcción y humo no
+se ejecutaron. Solo falta autorizar la publicación de la corrección para cerrar
+la secuencia en ambos sistemas.
+
 ## Archivos
 
 | Archivo | Función |
@@ -63,8 +85,8 @@ docker compose --env-file jenkins/.env -f jenkins/compose.yaml up -d --force-rec
 
 JCasC registra la credencial como `jg-github`. No incluyo el token en capturas,
 documentos ni comandos. Para que funcione el checkout, el Jenkinsfile y sus scripts
-deben estar publicados en la rama elegida. Hasta autorizar el push, esa parte
-permanece pendiente.
+deben estar publicados en la rama elegida. El checkout de `master` ya se verificó;
+la publicación de la rama de demostración requiere una autorización separada.
 
 ## Ejecutar el pipeline
 
@@ -138,6 +160,7 @@ El workflow anterior sigue activo, así que un push puede mostrar ambos.
 ## Evidencias y estado
 
 - [Validación local](evidencias/validacion-local.json).
+- [Borrador del informe universitario](informe.md).
 - [Demostración de error y corrección](demostracion.md).
 - [Lista de capturas](capturas/README.md).
 

@@ -1,0 +1,273 @@
+Started by user admin
+Checking out git https://github.com/JesusGalvis05/Repuestos_SAS.git into /var/jenkins_home/jobs/JG-Repuestos/workspace@script/ffd36ec8267048645df955269414e74716d428608f323aa8dd460ac41c4d9953 to read Jenkinsfile
+The recommended git tool is: NONE
+using credential jg-github
+ > git rev-parse --resolve-git-dir /var/jenkins_home/jobs/JG-Repuestos/workspace@script/ffd36ec8267048645df955269414e74716d428608f323aa8dd460ac41c4d9953/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/JesusGalvis05/Repuestos_SAS.git # timeout=10
+Fetching upstream changes from https://github.com/JesusGalvis05/Repuestos_SAS.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials Lectura del repositorio JG Repuestos
+ > git fetch --tags --force --progress -- https://github.com/JesusGalvis05/Repuestos_SAS.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/demo/entrega-2^{commit} # timeout=10
+ > git rev-parse demo/entrega-2^{commit} # timeout=10
+Checking out Revision 1296bc1f51debb512e00aa1bb767f7ce6a8aedaa (refs/remotes/origin/demo/entrega-2)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1296bc1f51debb512e00aa1bb767f7ce6a8aedaa # timeout=10
+Commit message: "prueba de error"
+First time build. Skipping changelog.
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/jobs/JG-Repuestos/workspace
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] timeout
+[2026-11-23T03:29:04.041Z] Timeout set to expire in 30 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pruebas automatizadas)
+[Pipeline] deleteDir
+[Pipeline] checkout
+[2026-11-23T03:29:04.115Z] The recommended git tool is: NONE
+[2026-11-23T03:29:04.115Z] using credential jg-github
+[2026-11-23T03:29:04.118Z] Cloning the remote Git repository
+[2026-11-23T03:29:04.118Z] Cloning repository https://github.com/JesusGalvis05/Repuestos_SAS.git
+[2026-11-23T03:29:04.118Z]  > git init /var/jenkins_home/jobs/JG-Repuestos/workspace # timeout=10
+[2026-11-23T03:29:04.124Z] Fetching upstream changes from https://github.com/JesusGalvis05/Repuestos_SAS.git
+[2026-11-23T03:29:04.124Z]  > git --version # timeout=10
+[2026-11-23T03:29:04.126Z]  > git --version # 'git version 2.47.3'
+[2026-11-23T03:29:04.126Z] using GIT_ASKPASS to set credentials Lectura del repositorio JG Repuestos
+[2026-11-23T03:29:04.128Z]  > git fetch --tags --force --progress -- https://github.com/JesusGalvis05/Repuestos_SAS.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-23T03:29:05.124Z]  > git config remote.origin.url https://github.com/JesusGalvis05/Repuestos_SAS.git # timeout=10
+[2026-11-23T03:29:05.126Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-23T03:29:05.130Z] Avoid second fetch
+[2026-11-23T03:29:05.130Z]  > git rev-parse refs/remotes/origin/demo/entrega-2^{commit} # timeout=10
+[2026-11-23T03:29:05.132Z]  > git rev-parse demo/entrega-2^{commit} # timeout=10
+[2026-11-23T03:29:05.134Z] Checking out Revision 1296bc1f51debb512e00aa1bb767f7ce6a8aedaa (refs/remotes/origin/demo/entrega-2)
+[2026-11-23T03:29:05.134Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-23T03:29:05.136Z]  > git checkout -f 1296bc1f51debb512e00aa1bb767f7ce6a8aedaa # timeout=10
+[2026-11-23T03:29:05.153Z] Commit message: "prueba de error"
+[Pipeline] sh
+[2026-11-23T03:29:05.421Z] + python3 scripts/ci_pipeline.py test
+[2026-11-23T03:29:06.333Z] #1 [internal] load local bake definitions
+[2026-11-23T03:29:06.334Z] #1 reading from stdin 603B done
+[2026-11-23T03:29:06.334Z] #1 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #2 [internal] load build definition from Dockerfile
+[2026-11-23T03:29:06.334Z] #2 transferring dockerfile: 726B done
+[2026-11-23T03:29:06.334Z] #2 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+[2026-11-23T03:29:06.334Z] #3 DONE 0.7s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #4 [internal] load .dockerignore
+[2026-11-23T03:29:06.334Z] #4 transferring context: 319B done
+[2026-11-23T03:29:06.334Z] #4 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #5 [base 1/8] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+[2026-11-23T03:29:06.334Z] #5 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #6 [internal] load build context
+[2026-11-23T03:29:06.334Z] #6 transferring context: 78.72kB 0.0s done
+[2026-11-23T03:29:06.334Z] #6 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #7 [test 1/4] COPY requirements-dev.lock ./
+[2026-11-23T03:29:06.334Z] #7 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #8 [base 2/8] WORKDIR /app
+[2026-11-23T03:29:06.334Z] #8 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #9 [base 6/8] COPY migrations ./migrations
+[2026-11-23T03:29:06.334Z] #9 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #10 [base 5/8] COPY app ./app
+[2026-11-23T03:29:06.334Z] #10 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #11 [base 7/8] COPY alembic.ini ./
+[2026-11-23T03:29:06.334Z] #11 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #12 [base 4/8] RUN pip install --no-cache-dir -r requirements.lock
+[2026-11-23T03:29:06.334Z] #12 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #13 [base 8/8] RUN groupadd --gid 10001 jg && useradd --create-home --uid 10001 --gid 10001 jg
+[2026-11-23T03:29:06.334Z] #13 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #14 [base 3/8] COPY requirements.lock ./
+[2026-11-23T03:29:06.334Z] #14 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #15 [test 2/4] RUN pip install --no-cache-dir -r requirements-dev.lock
+[2026-11-23T03:29:06.334Z] #15 CACHED
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #16 [test 3/4] COPY tests ./tests
+[2026-11-23T03:29:06.334Z] #16 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #17 [test 4/4] COPY pyproject.toml ./
+[2026-11-23T03:29:06.334Z] #17 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #18 exporting to image
+[2026-11-23T03:29:06.334Z] #18 exporting layers 0.0s done
+[2026-11-23T03:29:06.334Z] #18 writing image sha256:d4b8f0d618f740ddfc4a1327277051f2853cfcb227f712b29662fd6919d2adb5 done
+[2026-11-23T03:29:06.334Z] #18 naming to docker.io/library/jg-repuestos-ci:jenkins-2-test done
+[2026-11-23T03:29:06.334Z] #18 DONE 0.0s
+[2026-11-23T03:29:06.334Z] 
+[2026-11-23T03:29:06.334Z] #19 resolving provenance for metadata file
+[2026-11-23T03:29:06.334Z] #19 DONE 0.0s
+[2026-11-23T03:29:06.334Z]  Image jg-repuestos-ci:jenkins-2-test Building 
+[2026-11-23T03:29:06.334Z]  Image jg-repuestos-ci:jenkins-2-test Built 
+[2026-11-23T03:29:09.563Z]  Network jg-ci-jenkins-2_ci-network Creating 
+[2026-11-23T03:29:09.563Z]  Network jg-ci-jenkins-2_ci-network Creating 
+[2026-11-23T03:29:09.563Z]  Network jg-ci-jenkins-2_ci-network Created 
+[2026-11-23T03:29:09.563Z]  Network jg-ci-jenkins-2_ci-network Created 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Creating 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Created 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Starting 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Started 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Waiting 
+[2026-11-23T03:29:09.563Z]  Container jg-ci-jenkins-2-db-1 Healthy 
+[2026-11-23T03:29:17.590Z] ........................F.......                                         [100%]
+[2026-11-23T03:29:17.590Z] =================================== FAILURES ===================================
+[2026-11-23T03:29:17.590Z] ______________________ test_access_contract_and_wrong_key ______________________
+[2026-11-23T03:29:17.590Z] 
+[2026-11-23T03:29:17.590Z]     def test_access_contract_and_wrong_key():
+[2026-11-23T03:29:17.590Z]         user_id, session_id = uuid4(), uuid4()
+[2026-11-23T03:29:17.590Z]         token = issue_access(user_id, session_id, settings())
+[2026-11-23T03:29:17.590Z]         claims = decode_access(token, settings())
+[2026-11-23T03:29:17.590Z]         assert claims["sub"] == str(user_id)
+[2026-11-23T03:29:17.590Z]         assert claims["sid"] == str(session_id)
+[2026-11-23T03:29:17.590Z] >       assert claims["exp"] - claims["iat"] == 601
+[2026-11-23T03:29:17.590Z] E       assert (1795405156 - 1795404556) == 601
+[2026-11-23T03:29:17.590Z] 
+[2026-11-23T03:29:17.590Z] tests/test_rules.py:41: AssertionError
+[2026-11-23T03:29:17.590Z] =============================== warnings summary ===============================
+[2026-11-23T03:29:17.590Z] ../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+[2026-11-23T03:29:17.590Z]   /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+[2026-11-23T03:29:17.590Z]     from starlette.testclient import TestClient as TestClient  # noqa
+[2026-11-23T03:29:17.590Z] 
+[2026-11-23T03:29:17.590Z] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[2026-11-23T03:29:17.590Z] =========================== short test summary info ============================
+[2026-11-23T03:29:17.590Z] FAILED tests/test_rules.py::test_access_contract_and_wrong_key - assert (1795...
+[2026-11-23T03:29:17.590Z] 1 failed, 31 passed, 1 warning in 4.97s
+[2026-11-23T03:29:17.590Z]  Container jg-ci-jenkins-2-tests Creating 
+[2026-11-23T03:29:17.590Z]  Container jg-ci-jenkins-2-tests Created 
+[2026-11-23T03:29:17.590Z] INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+[2026-11-23T03:29:17.590Z] INFO  [alembic.runtime.migration] Will assume transactional DDL.
+[2026-11-23T03:29:17.590Z] INFO  [alembic.runtime.migration] Running upgrade  -> 0001_identity, Seguridad, sesiones, RBAC y auditoría; sin usuarios ni credenciales iniciales.
+[2026-11-23T03:29:17.590Z] 
+[2026-11-23T03:29:17.590Z] Etapa test fallida: Pytest fallo o no produjo el reporte XML
+Post stage
+[Pipeline] junit
+[2026-11-23T03:29:17.661Z] Recording test results
+[2026-11-23T03:29:17.674Z] [Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Construccion de imagen)
+Stage "Construccion de imagen" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Prueba de humo)
+Stage "Prueba de humo" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-11-23T03:29:18.159Z] + python3 scripts/ci_pipeline.py cleanup
+[2026-11-23T03:29:18.159Z] db-1  | The files belonging to this database system will be owned by user "postgres".
+[2026-11-23T03:29:18.159Z] db-1  | This user must also own the server process.
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | The database cluster will be initialized with locale "en_US.utf8".
+[2026-11-23T03:29:18.159Z] db-1  | The default database encoding has accordingly been set to "UTF8".
+[2026-11-23T03:29:18.159Z] db-1  | The default text search configuration will be set to "english".
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | Data page checksums are disabled.
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[2026-11-23T03:29:18.159Z] db-1  | creating subdirectories ... ok
+[2026-11-23T03:29:18.159Z] db-1  | selecting dynamic shared memory implementation ... posix
+[2026-11-23T03:29:18.159Z] db-1  | selecting default "max_connections" ... 100
+[2026-11-23T03:29:18.159Z] db-1  | selecting default "shared_buffers" ... 128MB
+[2026-11-23T03:29:18.159Z] db-1  | selecting default time zone ... Etc/UTC
+[2026-11-23T03:29:18.159Z] db-1  | creating configuration files ... ok
+[2026-11-23T03:29:18.159Z] db-1  | running bootstrap script ... ok
+[2026-11-23T03:29:18.159Z] db-1  | performing post-bootstrap initialization ... ok
+[2026-11-23T03:29:18.159Z] db-1  | initdb: warning: enabling "trust" authentication for local connections
+[2026-11-23T03:29:18.159Z] db-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+[2026-11-23T03:29:18.159Z] db-1  | syncing data to disk ... ok
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | Success. You can now start the database server using:
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | waiting for server to start....2026-11-23 03:29:06.782 UTC [49] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.783 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.784 UTC [52] LOG:  database system was shut down at 2026-11-23 03:29:06 UTC
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.786 UTC [49] LOG:  database system is ready to accept connections
+[2026-11-23T03:29:18.159Z] db-1  |  done
+[2026-11-23T03:29:18.159Z] db-1  | server started
+[2026-11-23T03:29:18.159Z] db-1  | CREATE DATABASE
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | waiting for server to shut down....2026-11-23 03:29:06.932 UTC [49] LOG:  received fast shutdown request
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.932 UTC [49] LOG:  aborting any active transactions
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.933 UTC [49] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.934 UTC [50] LOG:  shutting down
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.934 UTC [50] LOG:  checkpoint starting: shutdown immediate
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.937 UTC [50] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.004 s; sync files=301, longest=0.001 s, average=0.000 s; distance=4238 kB, estimate=4238 kB; lsn=0/190A9B8, redo lsn=0/190A9B8
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:06.940 UTC [49] LOG:  database system is shut down
+[2026-11-23T03:29:18.159Z] db-1  |  done
+[2026-11-23T03:29:18.159Z] db-1  | server stopped
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | PostgreSQL init process complete; ready for start up.
+[2026-11-23T03:29:18.159Z] db-1  | 
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.048 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.049 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.049 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.051 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.052 UTC [65] LOG:  database system was shut down at 2026-11-23 03:29:06 UTC
+[2026-11-23T03:29:18.159Z] db-1  | 2026-11-23 03:29:07.054 UTC [1] LOG:  database system is ready to accept connections
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Stopping 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Stopped 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Removing 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Removed 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-db-1 Stopping 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-db-1 Stopped 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-db-1 Removing 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-db-1 Removed 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Stopping 
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Error Error while Stopping
+[2026-11-23T03:29:18.410Z]  Container jg-ci-jenkins-2-tests Removed 
+[2026-11-23T03:29:18.410Z]  Network jg-ci-jenkins-2_ci-network Removing 
+[2026-11-23T03:29:18.410Z]  Network jg-ci-jenkins-2_ci-network Removed 
+[2026-11-23T03:29:18.410Z] Untagged: jg-repuestos-ci:jenkins-2-test
+[2026-11-23T03:29:18.410Z] Deleted: sha256:d4b8f0d618f740ddfc4a1327277051f2853cfcb227f712b29662fd6919d2adb5
+[2026-11-23T03:29:18.410Z] Error response from daemon: No such image: jg-repuestos-ci:jenkins-2-runtime
+[Pipeline] archiveArtifacts
+[2026-11-23T03:29:18.438Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE

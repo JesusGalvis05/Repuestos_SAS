@@ -1,0 +1,2 @@
+NAME                   IMAGE                          COMMAND                  SERVICE   CREATED         STATUS                   PORTS
+jg-jenkins-jenkins-1   jg-repuestos-jenkins:2.580.2   "/usr/bin/tini -- /uâ€¦"   jenkins   6 minutes ago   Up 6 minutes (healthy)   127.0.0.1:8081->8080/tcp

@@ -1,0 +1,10 @@
+{
+  "stage": "smoke",
+  "status": "passed",
+  "run_id": "actions-45105227996-1",
+  "timestamp": "2026-11-23T03:19:50.936411+00:00",
+  "endpoints": [
+    "/api/v1/health",
+    "/api/v1/ready"
+  ]
+}
