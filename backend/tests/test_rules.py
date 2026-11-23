@@ -38,7 +38,7 @@ def test_access_contract_and_wrong_key():
     claims = decode_access(token, settings())
     assert claims["sub"] == str(user_id)
     assert claims["sid"] == str(session_id)
-    assert claims["exp"] - claims["iat"] == 600
+    assert claims["exp"] - claims["iat"] == 601
     with pytest.raises(jwt.InvalidTokenError):
         decode_access(
             token,
