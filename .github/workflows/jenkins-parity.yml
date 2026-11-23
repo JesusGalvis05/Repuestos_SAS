@@ -1,0 +1,37 @@
+name: CI - Entrega 2
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CI_RUN_ID: actions-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pruebas automatizadas
+        run: python scripts/ci_pipeline.py test
+      - name: Construccion de imagen
+        run: python scripts/ci_pipeline.py build
+      - name: Prueba de humo
+        run: python scripts/ci_pipeline.py smoke
+      - name: Limpiar recursos temporales
+        if: always()
+        run: python scripts/ci_pipeline.py cleanup
+      - name: Conservar reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: entrega-2-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-results/
+          if-no-files-found: warn
