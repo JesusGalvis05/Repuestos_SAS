@@ -1,6 +1,7 @@
 .git
 .env
 .local
+ci-results
 .venv
 **/.env
 **/.env.*

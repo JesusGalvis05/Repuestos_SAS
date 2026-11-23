@@ -52,6 +52,9 @@ coverage/
 htmlcov/
 test-results/
 playwright-report/
+# Reportes generados por CI; se publican como artefactos, no como codigo.
+ci-results/
+jenkins_home/
 
 # Datos de ejecución y respaldos; no confundirlos con migraciones SQL.
 .local/

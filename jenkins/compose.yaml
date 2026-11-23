@@ -1,0 +1,44 @@
+name: jg-jenkins
+
+services:
+  jenkins:
+    image: jg-repuestos-jenkins:2.580.2
+    build:
+      context: .
+    environment:
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      CASC_JENKINS_CONFIG: /usr/share/jenkins/ref/casc.yaml
+      JENKINS_ADMIN_ID: ${JENKINS_ADMIN_ID:-admin}
+      JENKINS_ADMIN_PASSWORD: ${JENKINS_ADMIN_PASSWORD:?Ejecute python scripts/configure_jenkins.py}
+      JENKINS_URL: http://localhost:${JENKINS_HTTP_PORT:-8081}/
+      JG_REPOSITORY_URL: ${JG_REPOSITORY_URL:-https://github.com/JesusGalvis05/Repuestos_SAS.git}
+      JG_GITHUB_USER: ${JG_GITHUB_USER:-}
+      JG_GITHUB_TOKEN: ${JG_GITHUB_TOKEN:-}
+    ports:
+      - "127.0.0.1:${JENKINS_HTTP_PORT:-8081}:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      # Solo laboratorio local: este socket permite controlar el motor Docker.
+      - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - "${DOCKER_SOCKET_GID:-0}"
+    networks:
+      - jenkins-network
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:8080/login"]
+      start_period: 120s
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+networks:
+  jenkins-network:
+    driver: bridge
+
+volumes:
+  jenkins_home:

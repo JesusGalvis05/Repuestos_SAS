@@ -1,0 +1,32 @@
+jenkins:
+  systemMessage: "JG Repuestos - Entrega 2. Laboratorio local de integracion continua."
+  numExecutors: 1
+  mode: NORMAL
+  slaveAgentPort: -1
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "${JENKINS_ADMIN_ID}"
+          password: "${JENKINS_ADMIN_PASSWORD}"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: jg-github
+              username: "${JG_GITHUB_USER}"
+              password: "${JG_GITHUB_TOKEN}"
+              description: Lectura del repositorio JG Repuestos
+unclassified:
+  location:
+    url: "${JENKINS_URL}"
+jobs:
+  - file: /usr/share/jenkins/ref/jobs.groovy

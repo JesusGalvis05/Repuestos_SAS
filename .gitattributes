@@ -4,6 +4,9 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 Dockerfile text eol=lf
+Jenkinsfile text eol=lf
+*.groovy text eol=lf
+jenkins/plugins.txt text eol=lf
 .dockerignore text eol=lf
 .gitignore text eol=lf
 .env.example text eol=lf
