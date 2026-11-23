@@ -1,0 +1,3 @@
+{"status": "passed", "operation": "write-read-cleanup", "id": "a4ee4ba9-7b4c-4543-b628-7bd5c6e990f3", "host": "db", "configured_port": 5432, "server_port": 5432, "database": "jg_ci", "verified": ["id", "email", "full_name", "inactive", "no_roles"], "cleanup": "passed"}
+
+Exit code: 0

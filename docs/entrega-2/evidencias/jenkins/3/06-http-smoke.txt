@@ -1,0 +1,3 @@
+{"health": {"status": "ok", "service": "jg-repuestos", "phase": 1}, "ready": {"status": "ready"}}
+
+Exit code: 0

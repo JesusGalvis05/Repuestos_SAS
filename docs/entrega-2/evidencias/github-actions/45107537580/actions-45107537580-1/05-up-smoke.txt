@@ -1,0 +1,14 @@
+time="2026-11-23T03:43:09Z" level=warning msg="Found orphan containers ([jg-ci-actions-45107537580-1-tests]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container jg-ci-actions-45107537580-1-db-1  Running
+ Container jg-ci-actions-45107537580-1-api-1  Creating
+ Container jg-ci-actions-45107537580-1-api-1  Created
+ Container jg-ci-actions-45107537580-1-db-1  Waiting
+ Container jg-ci-actions-45107537580-1-db-1  Healthy
+ Container jg-ci-actions-45107537580-1-api-1  Starting
+ Container jg-ci-actions-45107537580-1-api-1  Started
+ Container jg-ci-actions-45107537580-1-db-1  Waiting
+ Container jg-ci-actions-45107537580-1-api-1  Waiting
+ Container jg-ci-actions-45107537580-1-db-1  Healthy
+ Container jg-ci-actions-45107537580-1-api-1  Healthy
+
+Exit code: 0

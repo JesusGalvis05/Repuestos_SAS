@@ -11,10 +11,10 @@ Edge. Cada PNG tiene un JSON con fecha, origen y método de captura.
 | `04-pipeline-inicial.png` | Tres etapas aprobadas antes del error | Obtenida, build 1 |
 | `05-prueba-fallida.png` | Aserción 600 frente a 601 y resultado fallido | Obtenida, build 2 |
 | `06-etapas-omitidas.png` | Construcción y humo omitidos tras el fallo | Obtenida, consola build 2 |
-| `07-pipeline-corregido.png` | Nueva ejecución con tres etapas aprobadas | Pendiente |
+| `07-pipeline-corregido.png` | Nueva ejecución con tres etapas aprobadas | Obtenida, build 3 |
 | `08-actions-fallido.png` | API oficial de Actions: fallo y commit visibles | Obtenida |
-| `09-actions-corregido.png` | Actions aprobado tras corregir | Pendiente |
-| `10-reporte-pytest.png` | Reporte de pruebas publicado en Jenkins | Obtenida, 32 aprobadas |
+| `09-actions-corregido.png` | API oficial de Actions: aprobado tras corregir | Obtenida |
+| `10-reporte-pytest.png` | Reporte de pruebas publicado en Jenkins | Obtenida, build 3: 32 aprobadas |
 
 Conservo el número de build o commit, el nombre del trabajo y su resultado.
 Evito mostrar `.env`, tokens, cookies y credenciales. Los registros y XML completos

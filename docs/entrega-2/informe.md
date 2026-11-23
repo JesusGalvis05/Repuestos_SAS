@@ -112,13 +112,18 @@ publicación de reportes terminaron correctamente.
 
 ## Corrección
 
-El commit local `22eba0b`, `correccion de prueba`, restaura exactamente la
-expectativa original. Su publicación y las ejecuciones posteriores están
-pendientes de autorización. La comprobación nativa de esa corrección ya pasó;
-no se presenta como una aprobación de Jenkins o Actions.
+Después de autorizar el push, publiqué `22eba0b`, `correccion de prueba`, que
+restaura exactamente la expectativa original de 600 segundos.
+[Jenkins 3](http://localhost:8081/job/JG-Repuestos/3/) ejecutó las tres etapas
+correctamente: 32 pruebas aprobadas, ninguna omitida, imagen construida y humo
+satisfactorio. La [ejecución 45107537580 de Actions](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580)
+también aprobó las tres etapas para ese commit.
 
-Este apartado debe actualizarse con los números y enlaces reales de las nuevas
-ejecuciones antes de presentar el documento como una demostración completa.
+| Momento | Commit | Jenkins | GitHub Actions |
+| --- | --- | --- | --- |
+| Inicial | `fd6806e` | Build 1: aprobado | `45105227996`: aprobado |
+| Error | `1296bc1` | Build 2: una prueba fallida; etapas posteriores omitidas | `45106218087`: fallido; construcción y humo omitidos |
+| Corrección | `22eba0b` | Build 3: 32 pruebas y tres etapas aprobadas | `45107537580`: aprobado |
 
 ## Comparación
 
@@ -138,8 +143,9 @@ que una aserción incorrecta detiene la construcción de la imagen final y la
 prueba de humo en ambos sistemas. La limpieza se ejecutó también después del
 fallo, y la aplicación de desarrollo siguió respondiendo correctamente.
 
-La ejecución de la corrección y sus capturas siguen pendientes; por tanto,
-todavía no afirmo que la secuencia completa esté terminada.
+Al restaurar la expectativa original, ambos sistemas volvieron a aprobar sin
+desactivar validaciones ni cambiar la funcionalidad. La secuencia completa
+quedó documentada con commits separados, reportes y capturas reales.
 
 ## Evidencias
 

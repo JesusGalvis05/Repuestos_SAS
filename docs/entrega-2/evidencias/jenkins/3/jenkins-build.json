@@ -1,0 +1,40 @@
+{
+  "number": 3,
+  "building": false,
+  "result": "SUCCESS",
+  "url": "http://localhost:8081/job/JG-Repuestos/3/",
+  "duration": 23710,
+  "stages": [
+    {
+      "id": "12",
+      "name": "Pruebas automatizadas",
+      "status": "SUCCESS",
+      "durationMillis": 13467
+    },
+    {
+      "id": "20",
+      "name": "Construccion de imagen",
+      "status": "SUCCESS",
+      "durationMillis": 542
+    },
+    {
+      "id": "25",
+      "name": "Prueba de humo",
+      "status": "SUCCESS",
+      "durationMillis": 7683
+    },
+    {
+      "id": "30",
+      "name": "Declarative: Post Actions",
+      "status": "SUCCESS",
+      "durationMillis": 904
+    }
+  ],
+  "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+  "tests": {
+    "totalCount": 32,
+    "failCount": 0,
+    "skipCount": 0
+  },
+  "skipped_stages": []
+}

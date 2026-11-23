@@ -8,6 +8,19 @@ No desactivo validaciones ni cambio la funcionalidad.
 
 ## Secuencia de Jenkins y GitHub
 
+La secuencia se ejecutó el 22 de noviembre de 2026:
+
+| Momento | Commit | Build Jenkins | Ejecución CI - Entrega 2 |
+| --- | --- | --- | --- |
+| Inicial | `fd6806e` | 1, aprobado | `45105227996`, aprobada |
+| Error | `1296bc1` | 2, fallido: 31 aprobadas y una fallida | `45106218087`, fallida |
+| Corrección | `22eba0b` | 3, aprobado: 32 pruebas | `45107537580`, aprobada |
+
+En el fallo, construcción y humo se omitieron en ambos sistemas. Los JSON,
+consolas y XML están en `evidencias/`; las imágenes reales en `capturas/`.
+
+Para repetirla con nuevos builds sigo estos pasos:
+
 1. Publico la configuración funcional, después de autorizar el push.
 2. Ejecuto Jenkins con esa rama y guardo el build aprobado.
 3. Publico en `demo/entrega-2` el commit `prueba de error`.
@@ -21,7 +34,7 @@ Cada push requiere autorización previa. No publico ambos commits juntos antes
 de capturar el fallo: Jenkins descargaría la punta ya corregida de la rama.
 No es necesario fusionar el historial de demostración a `master`.
 
-`evidencias/simulacion-local.json`, cuando exista, contiene los hashes y resultados
+`evidencias/simulacion-local.json` contiene los hashes y resultados
 de la comprobación nativa en un worktree separado. Esa prueba no sustituye la
 secuencia real en Jenkins y Actions.
 

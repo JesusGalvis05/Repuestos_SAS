@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-22T22:35:47.978802-05:00",
+  "timestamp": "2026-11-22T22:47:26.062512-05:00",
   "native_backend": {
     "passed": 14,
     "skipped": 18,
@@ -34,9 +34,7 @@
     "html_url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/42734177364"
   },
   "pending": [
-    "Autorizacion para publicar correccion de prueba en demo/entrega-2",
-    "Ejecuciones y capturas de Jenkins y Actions tras corregir",
-    "Autorizacion para publicar ajuste JCasC y evidencias actualizadas"
+    "Authorization to publish the JCasC fix and final documentation/evidence commits to master"
   ],
   "push_performed": {
     "branch": "master",
@@ -217,7 +215,7 @@
     "roundtrip": {
       "status": "passed",
       "operation": "write-read-cleanup",
-      "id": "1516a52b-7c85-45cc-baaa-714306ea5970",
+      "id": "82481a5c-89a1-4472-a34a-9033273b38cf",
       "host": "db",
       "configured_port": 5432,
       "server_port": 5432,
@@ -368,5 +366,161 @@
       }
     ],
     "source": "API oficial de GitHub; token y URLs firmadas no conservados"
+  },
+  "jenkins_corrected": {
+    "number": 3,
+    "building": false,
+    "result": "SUCCESS",
+    "url": "http://localhost:8081/job/JG-Repuestos/3/",
+    "duration": 23710,
+    "stages": [
+      {
+        "id": "12",
+        "name": "Pruebas automatizadas",
+        "status": "SUCCESS",
+        "durationMillis": 13467
+      },
+      {
+        "id": "20",
+        "name": "Construccion de imagen",
+        "status": "SUCCESS",
+        "durationMillis": 542
+      },
+      {
+        "id": "25",
+        "name": "Prueba de humo",
+        "status": "SUCCESS",
+        "durationMillis": 7683
+      },
+      {
+        "id": "30",
+        "name": "Declarative: Post Actions",
+        "status": "SUCCESS",
+        "durationMillis": 904
+      }
+    ],
+    "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+    "tests": {
+      "totalCount": 32,
+      "failCount": 0,
+      "skipCount": 0
+    },
+    "skipped_stages": []
+  },
+  "github_actions_corrected": {
+    "run_id": 45107537580,
+    "name": "CI - Entrega 2",
+    "url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580",
+    "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+    "branch": "demo/entrega-2",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-23T03:42:14Z",
+    "updated_at": "2026-11-23T03:43:24Z",
+    "jobs": [
+      {
+        "name": "pipeline",
+        "conclusion": "success",
+        "url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580/job/137472142946",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run docker/setup-buildx-action@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Pruebas automatizadas",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Construccion de imagen",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prueba de humo",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Limpiar recursos temporales",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Conservar reportes",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run docker/setup-buildx-action@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "entrega-2-45107537580-1",
+        "id": 14788136610
+      }
+    ],
+    "source": "API oficial de GitHub; token y URLs firmadas no conservados"
+  },
+  "github_actions_delivery_1_corrected": {
+    "run_id": 45107537577,
+    "conclusion": "success",
+    "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+    "url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537577"
+  },
+  "demo_branch": {
+    "branch": "demo/entrega-2",
+    "failure_sha": "1296bc1f51debb512e00aa1bb767f7ce6a8aedaa",
+    "corrected_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+    "both_pushes_authorized": true,
+    "corrected_tip_pushed": true
+  },
+  "pdf": {
+    "file": "docs/entrega-2/JG_Repuestos_Entrega_2_Jenkins.pdf",
+    "pages": 14,
+    "real_screenshots": 10,
+    "cover_fields_to_complete": [
+      "student name",
+      "student code",
+      "teacher"
+    ]
   }
 }

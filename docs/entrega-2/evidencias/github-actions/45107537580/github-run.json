@@ -1,0 +1,93 @@
+{
+  "run_id": 45107537580,
+  "name": "CI - Entrega 2",
+  "url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580",
+  "head_sha": "22eba0bdcb67ee8af98b8d613de61f8925f51c0e",
+  "branch": "demo/entrega-2",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-11-23T03:42:14Z",
+  "updated_at": "2026-11-23T03:43:24Z",
+  "jobs": [
+    {
+      "name": "pipeline",
+      "conclusion": "success",
+      "url": "https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580/job/137472142946",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run docker/setup-buildx-action@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Pruebas automatizadas",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Construccion de imagen",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prueba de humo",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Limpiar recursos temporales",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Conservar reportes",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run docker/setup-buildx-action@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "entrega-2-45107537580-1",
+      "id": 14788136610
+    }
+  ],
+  "source": "API oficial de GitHub; token y URLs firmadas no conservados"
+}

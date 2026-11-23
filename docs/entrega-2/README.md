@@ -25,8 +25,9 @@ está en el commit local `112342b` y aún no se ha publicado.
 Después de autorizar la rama, [Jenkins 2](http://localhost:8081/job/JG-Repuestos/2/)
 y [Actions 45106218087](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45106218087)
 detectaron el error: 31 pruebas aprobadas y una fallida. Construcción y humo no
-se ejecutaron. Solo falta autorizar la publicación de la corrección para cerrar
-la secuencia en ambos sistemas.
+se ejecutaron. Tras publicar la corrección `22eba0b`, [Jenkins 3](http://localhost:8081/job/JG-Repuestos/3/)
+y [Actions 45107537580](https://github.com/JesusGalvis05/Repuestos_SAS/actions/runs/45107537580)
+volvieron a aprobar las tres etapas, con 32 pruebas y ninguna omitida.
 
 ## Archivos
 
@@ -159,6 +160,7 @@ El workflow anterior sigue activo, así que un push puede mostrar ambos.
 
 ## Evidencias y estado
 
+- [Informe en PDF](JG_Repuestos_Entrega_2_Jenkins.pdf): 14 páginas y diez capturas reales.
 - [Validación local](evidencias/validacion-local.json).
 - [Borrador del informe universitario](informe.md).
 - [Demostración de error y corrección](demostracion.md).
@@ -168,6 +170,17 @@ Una prueba nativa o validar YAML no demuestra una ejecución desde Jenkins.
 Los resultados pendientes solo se completan después de ejecutarlos.
 La guía `CI-U2E4-Guia-Ejercicio.pdf` y el ZIP mencionados no estuvieron disponibles
 para esta revisión; la implementación sigue los requisitos del texto adjunto.
+
+Para completar el PDF edito nombre, código y docente en `informe.md` y lo genero
+de nuevo. Estas herramientas de documentación se ejecutan fuera de la imagen API:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r scripts/requirements-evidence.lock
+.\.venv\Scripts\python.exe scripts/build_jenkins_pdf.py
+```
+
+Las capturas de Actions muestran la respuesta real de su API oficial. Si necesito
+además el panel web, abro los enlaces de las ejecuciones con mi sesión de GitHub.
 
 ## Referencias
 
